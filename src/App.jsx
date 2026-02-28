@@ -14,7 +14,7 @@ const i18n = {
     credit: "Based on Dr. Gary Chapman's framework",
     questionOf: (n, t) => `Question ${n} of ${t}`,
     answered: (n) => `${n} answered`,
-    which: "Which resonates more?",
+    which: "It means more to me when...",
     previous: "Previous",
     yourResults: "Your Results",
     primaryLang: "Your Primary Love Language",
@@ -32,6 +32,14 @@ const i18n = {
     retake: "Retake Quiz",
     saveAsPDF: "Save as PDF",
     shareImage: "Share as Image",
+    shareWhatsApp: "Share on WhatsApp",
+    shareNative: "Share",
+    comparePartner: "Compare with Partner",
+    compareInvite: "Send this link to your partner so you can compare results:",
+    copyLink: "Copy Link",
+    copied: "Copied!",
+    discovering: "Discovering your love language...",
+    methodology: "Based on Dr. Gary Chapman's 5 Love Languages framework, adapted from his bestselling book.",
     nextSteps: [
       { emoji: "\u{1F46B}", title: "Share with your partner", desc: "Have them take this quiz too" },
       { emoji: "\u{1F4AD}", title: "Reflect on patterns", desc: "Notice your top 2\u20133 scores" },
@@ -55,7 +63,7 @@ const i18n = {
     credit: "\u0645\u0628\u0646\u064A \u0639\u0644\u0649 \u0625\u0637\u0627\u0631 \u062F. \u063A\u0627\u0631\u064A \u062A\u0634\u0627\u0628\u0645\u0627\u0646",
     questionOf: (n, t) => `\u0627\u0644\u0633\u0624\u0627\u0644 ${n} \u0645\u0646 ${t}`,
     answered: (n) => `${n} \u062A\u0645\u062A \u0627\u0644\u0625\u062C\u0627\u0628\u0629`,
-    which: "\u0623\u064A\u0651\u0647\u0645\u0627 \u0623\u0642\u0631\u0628 \u0625\u0644\u064A\u0643\u061F",
+    which: "\u064A\u0639\u0646\u064A \u0644\u064A \u0623\u0643\u062B\u0631 \u0639\u0646\u062F\u0645\u0627...",
     previous: "\u0627\u0644\u0633\u0627\u0628\u0642",
     yourResults: "\u0646\u062A\u0627\u0626\u062C\u0643",
     primaryLang: "\u0644\u063A\u0629 \u062D\u0628\u0643 \u0627\u0644\u0623\u0633\u0627\u0633\u064A\u0629",
@@ -73,6 +81,14 @@ const i18n = {
     retake: "\u0623\u0639\u062F \u0627\u0644\u0627\u062E\u062A\u0628\u0627\u0631",
     saveAsPDF: "\u062D\u0641\u0638 \u0643\u0640 PDF",
     shareImage: "\u0645\u0634\u0627\u0631\u0643\u0629 \u0643\u0635\u0648\u0631\u0629",
+    shareWhatsApp: "\u0645\u0634\u0627\u0631\u0643\u0629 \u0639\u0628\u0631 \u0648\u0627\u062A\u0633\u0627\u0628",
+    shareNative: "\u0645\u0634\u0627\u0631\u0643\u0629",
+    comparePartner: "\u0642\u0627\u0631\u0646 \u0645\u0639 \u0634\u0631\u064A\u0643\u0643",
+    compareInvite: "\u0623\u0631\u0633\u0644 \u0647\u0630\u0627 \u0627\u0644\u0631\u0627\u0628\u0637 \u0644\u0634\u0631\u064A\u0643\u0643 \u0644\u0645\u0642\u0627\u0631\u0646\u0629 \u0627\u0644\u0646\u062A\u0627\u0626\u062C:",
+    copyLink: "\u0646\u0633\u062E \u0627\u0644\u0631\u0627\u0628\u0637",
+    copied: "\u062A\u0645 \u0627\u0644\u0646\u0633\u062E!",
+    discovering: "\u062C\u0627\u0631\u064D \u0627\u0643\u062A\u0634\u0627\u0641 \u0644\u063A\u0629 \u062D\u0628\u0643...",
+    methodology: "\u0645\u0628\u0646\u064A \u0639\u0644\u0649 \u0625\u0637\u0627\u0631 \u0644\u063A\u0627\u062A \u0627\u0644\u062D\u0628 \u0627\u0644\u062E\u0645\u0633 \u0644\u0644\u062F\u0643\u062A\u0648\u0631 \u063A\u0627\u0631\u064A \u062A\u0634\u0627\u0628\u0645\u0627\u0646\u060C \u0645\u0642\u062A\u0628\u0633 \u0645\u0646 \u0643\u062A\u0627\u0628\u0647 \u0627\u0644\u0623\u0643\u062B\u0631 \u0645\u0628\u064A\u0639\u064B\u0627.",
     nextSteps: [
       { emoji: "\u{1F46B}", title: "\u0634\u0627\u0631\u0643 \u0634\u0631\u064A\u0643\u0643", desc: "\u0627\u0637\u0644\u0628 \u0645\u0646\u0647 \u0623\u062E\u0630 \u0627\u0644\u0627\u062E\u062A\u0628\u0627\u0631 \u0623\u064A\u0636\u064B\u0627" },
       { emoji: "\u{1F4AD}", title: "\u062A\u0623\u0645\u0644 \u0627\u0644\u0646\u062A\u0627\u0626\u062C", desc: "\u0644\u0627\u062D\u0638 \u0623\u0639\u0644\u0649 \u0662-\u0663 \u0646\u062A\u0627\u0626\u062C" },
@@ -92,68 +108,68 @@ const i18n = {
 // ──── QUESTIONS (bilingual) ────
 const questions = {
   en: [
-    { a: { text: "I like to receive compliments and words of appreciation", lang: "words" }, b: { text: "I feel loved when someone helps me with tasks I need to do", lang: "service" } },
-    { a: { text: "I know someone cares when they do things for me without being asked", lang: "service" }, b: { text: "I value hearing 'I love you' and other words of affirmation", lang: "words" } },
-    { a: { text: "I feel loved when someone tells me they are proud of me", lang: "words" }, b: { text: "I feel loved when a person cooks a meal for me", lang: "service" } },
-    { a: { text: "I like it when people listen to me and show genuine interest in what I'm saying", lang: "time" }, b: { text: "I like for people to compliment my achievements", lang: "words" } },
-    { a: { text: "I like for people to compliment my appearance", lang: "words" }, b: { text: "I feel loved when people take time to understand my feelings", lang: "time" } },
-    { a: { text: "I like being together and doing things with friends and loved ones", lang: "time" }, b: { text: "I like it when kind words are spoken to me", lang: "words" } },
-    { a: { text: "Visible symbols of love (gifts) are very important to me", lang: "gifts" }, b: { text: "I feel loved when people affirm me with encouraging words", lang: "words" } },
-    { a: { text: "I value praise and try to avoid criticism", lang: "words" }, b: { text: "Several small gifts mean more to me than one large gift", lang: "gifts" } },
-    { a: { text: "I like receiving gifts from my loved ones", lang: "gifts" }, b: { text: "I like hearing words of encouragement from my loved ones", lang: "words" } },
-    { a: { text: "I like to receive notes of affirmation from people I care about", lang: "words" }, b: { text: "I like it when someone hugs me", lang: "touch" } },
-    { a: { text: "I like to sit close to people I enjoy being around", lang: "touch" }, b: { text: "I like it when people tell me I am attractive or beautiful", lang: "words" } },
-    { a: { text: "Words of acceptance are important to me", lang: "words" }, b: { text: "I feel loved when someone holds my hand", lang: "touch" } },
-    { a: { text: "I like to spend one-on-one time with someone I care about", lang: "time" }, b: { text: "I feel loved when someone gives me practical help", lang: "service" } },
-    { a: { text: "I really enjoy the feeling I get when someone gives me undivided attention", lang: "time" }, b: { text: "I really enjoy the feeling I get when someone does an act of service for me", lang: "service" } },
-    { a: { text: "I like knowing loved ones are concerned enough to help with my daily tasks", lang: "service" }, b: { text: "I enjoy extended trips with someone who is special to me", lang: "time" } },
-    { a: { text: "I feel loved when friends and loved ones help me with jobs or projects", lang: "service" }, b: { text: "I really enjoy receiving gifts from friends and loved ones", lang: "gifts" } },
-    { a: { text: "I appreciate the many things that special people do for me", lang: "service" }, b: { text: "I like receiving gifts that special people make for me", lang: "gifts" } },
-    { a: { text: "I know a person is thinking of me when they give me a gift", lang: "gifts" }, b: { text: "I feel loved when a person helps with my chores", lang: "service" } },
-    { a: { text: "I feel loved when people do things to help me", lang: "service" }, b: { text: "I feel loved when people physically express care through touch", lang: "touch" } },
-    { a: { text: "What someone does for me affects me more than what they say", lang: "service" }, b: { text: "Hugs make me feel connected and valued", lang: "touch" } },
-    { a: { text: "I feel secure when a special person is touching me", lang: "touch" }, b: { text: "Acts of service make me feel loved", lang: "service" } },
-    { a: { text: "I like it when people give me gifts", lang: "gifts" }, b: { text: "I like leisurely visits with friends and loved ones", lang: "time" } },
-    { a: { text: "I like to spend time with friends and loved ones", lang: "time" }, b: { text: "I like to receive little gifts from friends and loved ones", lang: "gifts" } },
-    { a: { text: "I appreciate it when someone listens patiently and doesn't interrupt me", lang: "time" }, b: { text: "I appreciate it when someone remembers special days with a gift", lang: "gifts" } },
-    { a: { text: "I like to go places with friends and loved ones", lang: "time" }, b: { text: "I like to high-five or hold hands with people who are special to me", lang: "touch" } },
-    { a: { text: "I feel close to someone when we are talking or doing something together", lang: "time" }, b: { text: "I feel closer to friends and loved ones when they touch me often", lang: "touch" } },
-    { a: { text: "I like to be touched as friends and loved ones walk by", lang: "touch" }, b: { text: "I like it when my partner and I spend dedicated time together", lang: "time" } },
-    { a: { text: "I feel loved when someone I love puts their arm around me", lang: "touch" }, b: { text: "I feel loved when I receive a gift from someone I love", lang: "gifts" } },
-    { a: { text: "I like to kiss or be kissed by people I am close to", lang: "touch" }, b: { text: "I like to receive a gift that has a lot of thought behind it", lang: "gifts" } },
-    { a: { text: "I feel loved when a person celebrates my birthday with a gift", lang: "gifts" }, b: { text: "I feel loved when a person gives me a warm embrace on my birthday", lang: "touch" } },
+    { a: { text: "Someone I love tells me 'I'm so proud of you' after a tough day", lang: "words" }, b: { text: "Someone I love takes over my errands when they see I'm overwhelmed", lang: "service" } },
+    { a: { text: "Someone I love fixes something around the house without me asking", lang: "service" }, b: { text: "Someone I love leaves a heartfelt note in my bag to find later", lang: "words" } },
+    { a: { text: "Someone I love looks me in the eyes and says 'You mean the world to me'", lang: "words" }, b: { text: "Someone I love cooks my favorite meal after a long week", lang: "service" } },
+    { a: { text: "Someone I love puts their phone away and truly listens when I share about my day", lang: "time" }, b: { text: "Someone I love tells me specifically what they admire about me", lang: "words" } },
+    { a: { text: "Someone I love says 'You look amazing today' as I walk out the door", lang: "words" }, b: { text: "Someone I love sits with me in silence when I'm going through something hard", lang: "time" } },
+    { a: { text: "Someone I love plans a whole day just for us to spend together", lang: "time" }, b: { text: "Someone I love sends me a voice message saying how much I matter to them", lang: "words" } },
+    { a: { text: "Someone I love brings me a small gift that reminded them of me", lang: "gifts" }, b: { text: "Someone I love writes me a long message about what I mean to them", lang: "words" } },
+    { a: { text: "Someone I love encourages me when I'm doubting myself", lang: "words" }, b: { text: "Someone I love surprises me with several little things throughout the week", lang: "gifts" } },
+    { a: { text: "Someone I love picks out something special for me while shopping", lang: "gifts" }, b: { text: "Someone I love cheers me on before a big moment", lang: "words" } },
+    { a: { text: "Someone I love texts me a paragraph about why they appreciate me", lang: "words" }, b: { text: "Someone I love wraps me in a long, warm hug when I get home", lang: "touch" } },
+    { a: { text: "Someone I love moves closer to sit right next to me on the couch", lang: "touch" }, b: { text: "Someone I love compliments me in front of others", lang: "words" } },
+    { a: { text: "Someone I love tells me they accept me exactly as I am", lang: "words" }, b: { text: "Someone I love reaches for my hand while we're walking together", lang: "touch" } },
+    { a: { text: "Someone I love sets aside a whole evening just for the two of us", lang: "time" }, b: { text: "Someone I love handles a stressful task so I don't have to worry", lang: "service" } },
+    { a: { text: "Someone I love gives me their full, undivided attention during a conversation", lang: "time" }, b: { text: "Someone I love drives out of their way to pick something up for me", lang: "service" } },
+    { a: { text: "Someone I love takes care of something on my to-do list before I ask", lang: "service" }, b: { text: "Someone I love takes me on a weekend getaway just to be together", lang: "time" } },
+    { a: { text: "Someone I love stays up late to help me finish a project", lang: "service" }, b: { text: "Someone I love brings home a surprise gift just because it's Tuesday", lang: "gifts" } },
+    { a: { text: "Someone I love quietly does the dishes after dinner so I can relax", lang: "service" }, b: { text: "Someone I love gives me something they made with their own hands", lang: "gifts" } },
+    { a: { text: "Someone I love sees something that makes them think of me and buys it", lang: "gifts" }, b: { text: "Someone I love cleans the whole house before I get home", lang: "service" } },
+    { a: { text: "Someone I love fills up my car with gas without being asked", lang: "service" }, b: { text: "Someone I love rubs my shoulders when they can tell I'm tense", lang: "touch" } },
+    { a: { text: "Someone I love runs me a bath after a hard day at work", lang: "service" }, b: { text: "Someone I love holds me tight when I'm feeling down", lang: "touch" } },
+    { a: { text: "Someone I love puts their arm around me when we're in a crowd", lang: "touch" }, b: { text: "Someone I love wakes up early to make me coffee before I start my day", lang: "service" } },
+    { a: { text: "Someone I love gives me a beautifully wrapped birthday gift", lang: "gifts" }, b: { text: "Someone I love plans a lazy Sunday morning just for us", lang: "time" } },
+    { a: { text: "Someone I love goes on a long walk with me and asks about my dreams", lang: "time" }, b: { text: "Someone I love picks out a book they know I'd love", lang: "gifts" } },
+    { a: { text: "Someone I love listens patiently without checking their phone", lang: "time" }, b: { text: "Someone I love remembers a date that's special to us with a thoughtful gift", lang: "gifts" } },
+    { a: { text: "Someone I love drives me to a new place and explores it with me", lang: "time" }, b: { text: "Someone I love high-fives me or squeezes my hand after good news", lang: "touch" } },
+    { a: { text: "Someone I love and I cook dinner together while talking about everything", lang: "time" }, b: { text: "Someone I love touches my back gently as they pass by me", lang: "touch" } },
+    { a: { text: "Someone I love plays with my hair while we watch a movie", lang: "touch" }, b: { text: "Someone I love and I have a 'no phones' date night every week", lang: "time" } },
+    { a: { text: "Someone I love puts their arm around me while we sit together", lang: "touch" }, b: { text: "Someone I love brings me flowers or my favorite treat unexpectedly", lang: "gifts" } },
+    { a: { text: "Someone I love kisses my forehead before leaving for the day", lang: "touch" }, b: { text: "Someone I love gives me a gift that shows they truly know me", lang: "gifts" } },
+    { a: { text: "Someone I love surprises me with a meaningful gift on my birthday", lang: "gifts" }, b: { text: "Someone I love gives me the warmest hug on my birthday", lang: "touch" } },
   ],
   ar: [
-    { a: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0627\u0644\u0625\u0637\u0631\u0627\u0621 \u0648\u0643\u0644\u0645\u0627\u062A \u0627\u0644\u062A\u0642\u062F\u064A\u0631", lang: "words" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0633\u0627\u0639\u062F\u0646\u064A \u0623\u062D\u062F \u0641\u064A \u0645\u0647\u0627\u0645\u064A", lang: "service" } },
-    { a: { text: "\u0623\u0639\u0631\u0641 \u0623\u0646 \u0634\u062E\u0635\u064B\u0627 \u064A\u0647\u062A\u0645 \u0628\u064A \u0639\u0646\u062F\u0645\u0627 \u064A\u0641\u0639\u0644 \u0623\u0634\u064A\u0627\u0621 \u0644\u064A \u062F\u0648\u0646 \u0623\u0646 \u0623\u0637\u0644\u0628", lang: "service" }, b: { text: "\u0623\u0642\u062F\u0631 \u0633\u0645\u0627\u0639 '\u0623\u062D\u0628\u0643' \u0648\u0643\u0644\u0645\u0627\u062A \u0627\u0644\u062A\u0623\u0643\u064A\u062F", lang: "words" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u0648\u0644 \u0644\u064A \u0623\u062D\u062F \u0623\u0646\u0647 \u0641\u062E\u0648\u0631 \u0628\u064A", lang: "words" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0637\u0628\u062E \u0644\u064A \u0623\u062D\u062F \u0648\u062C\u0628\u0629", lang: "service" } },
-    { a: { text: "\u0623\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0633\u062A\u0645\u0639 \u0627\u0644\u0646\u0627\u0633 \u0644\u064A \u0628\u0627\u0647\u062A\u0645\u0627\u0645 \u062D\u0642\u064A\u0642\u064A", lang: "time" }, b: { text: "\u0623\u062D\u0628 \u0623\u0646 \u064A\u0645\u062F\u062D \u0627\u0644\u0646\u0627\u0633 \u0625\u0646\u062C\u0627\u0632\u0627\u062A\u064A", lang: "words" } },
-    { a: { text: "\u0623\u062D\u0628 \u0623\u0646 \u064A\u0645\u062F\u062D \u0627\u0644\u0646\u0627\u0633 \u0645\u0638\u0647\u0631\u064A", lang: "words" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0623\u062E\u0630 \u0627\u0644\u0646\u0627\u0633 \u0648\u0642\u062A\u064B\u0627 \u0644\u0641\u0647\u0645 \u0645\u0634\u0627\u0639\u0631\u064A", lang: "time" } },
-    { a: { text: "\u0623\u062D\u0628 \u0627\u0644\u062A\u0648\u0627\u062C\u062F \u0648\u0641\u0639\u0644 \u0627\u0644\u0623\u0634\u064A\u0627\u0621 \u0645\u0639 \u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "time" }, b: { text: "\u0623\u062D\u0628 \u0633\u0645\u0627\u0639 \u0627\u0644\u0643\u0644\u0645\u0627\u062A \u0627\u0644\u0644\u0637\u064A\u0641\u0629", lang: "words" } },
-    { a: { text: "\u0631\u0645\u0648\u0632 \u0627\u0644\u062D\u0628 \u0627\u0644\u0645\u0631\u0626\u064A\u0629 (\u0627\u0644\u0647\u062F\u0627\u064A\u0627) \u0645\u0647\u0645\u0629 \u062C\u062F\u064B\u0627 \u0644\u064A", lang: "gifts" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0634\u062C\u0639\u0646\u064A \u0627\u0644\u0646\u0627\u0633 \u0628\u0643\u0644\u0645\u0627\u062A\u0647\u0645", lang: "words" } },
-    { a: { text: "\u0623\u0642\u062F\u0631 \u0627\u0644\u0645\u062F\u064A\u062D \u0648\u0623\u062D\u0627\u0648\u0644 \u062A\u062C\u0646\u0628 \u0627\u0644\u0627\u0646\u062A\u0642\u0627\u062F", lang: "words" }, b: { text: "\u0639\u062F\u0629 \u0647\u062F\u0627\u064A\u0627 \u0635\u063A\u064A\u0631\u0629 \u0623\u0641\u0636\u0644 \u0645\u0646 \u0647\u062F\u064A\u0629 \u0643\u0628\u064A\u0631\u0629 \u0648\u0627\u062D\u062F\u0629", lang: "gifts" } },
-    { a: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0627\u0644\u0647\u062F\u0627\u064A\u0627 \u0645\u0646 \u0623\u062D\u0628\u0627\u0626\u064A", lang: "gifts" }, b: { text: "\u0623\u062D\u0628 \u0633\u0645\u0627\u0639 \u0643\u0644\u0645\u0627\u062A \u0627\u0644\u062A\u0634\u062C\u064A\u0639 \u0645\u0646 \u0623\u062D\u0628\u0627\u0626\u064A", lang: "words" } },
-    { a: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0631\u0633\u0627\u0626\u0644 \u062A\u0642\u062F\u064A\u0631 \u0645\u0646 \u0627\u0644\u0623\u0634\u062E\u0627\u0635 \u0627\u0644\u0630\u064A\u0646 \u0623\u0647\u062A\u0645 \u0628\u0647\u0645", lang: "words" }, b: { text: "\u0623\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u062D\u0636\u0646\u0646\u064A \u0623\u062D\u062F", lang: "touch" } },
-    { a: { text: "\u0623\u062D\u0628 \u0627\u0644\u062C\u0644\u0648\u0633 \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646 \u0627\u0644\u0623\u0634\u062E\u0627\u0635 \u0627\u0644\u0630\u064A\u0646 \u0623\u0633\u062A\u0645\u062A\u0639 \u0628\u0648\u062C\u0648\u062F\u0647\u0645", lang: "touch" }, b: { text: "\u0623\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u0648\u0644 \u0644\u064A \u0627\u0644\u0646\u0627\u0633 \u0623\u0646\u0646\u064A \u062C\u0645\u064A\u0644", lang: "words" } },
-    { a: { text: "\u0643\u0644\u0645\u0627\u062A \u0627\u0644\u0642\u0628\u0648\u0644 \u0645\u0647\u0645\u0629 \u0644\u064A", lang: "words" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0645\u0633\u0643 \u0623\u062D\u062F \u0628\u064A\u062F\u064A", lang: "touch" } },
-    { a: { text: "\u0623\u062D\u0628 \u0642\u0636\u0627\u0621 \u0648\u0642\u062A \u0641\u0631\u062F\u064A \u0645\u0639 \u0634\u062E\u0635 \u0623\u0647\u062A\u0645 \u0628\u0647", lang: "time" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u062F\u0645 \u0644\u064A \u0623\u062D\u062F \u0645\u0633\u0627\u0639\u062F\u0629 \u0639\u0645\u0644\u064A\u0629", lang: "service" } },
-    { a: { text: "\u0623\u0633\u062A\u0645\u062A\u0639 \u062D\u0642\u064B\u0627 \u0639\u0646\u062F\u0645\u0627 \u064A\u0639\u0637\u064A\u0646\u064A \u0623\u062D\u062F \u0627\u0647\u062A\u0645\u0627\u0645\u0647 \u0627\u0644\u0643\u0627\u0645\u0644", lang: "time" }, b: { text: "\u0623\u0633\u062A\u0645\u062A\u0639 \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u062F\u0645 \u0644\u064A \u0623\u062D\u062F \u062E\u062F\u0645\u0629", lang: "service" } },
-    { a: { text: "\u064A\u0633\u0639\u062F\u0646\u064A \u0623\u0646 \u0623\u062D\u0628\u0627\u0626\u064A \u064A\u0647\u062A\u0645\u0648\u0646 \u0628\u0645\u0633\u0627\u0639\u062F\u062A\u064A \u0641\u064A \u0645\u0647\u0627\u0645\u064A \u0627\u0644\u064A\u0648\u0645\u064A\u0629", lang: "service" }, b: { text: "\u0623\u0633\u062A\u0645\u062A\u0639 \u0628\u0627\u0644\u0631\u062D\u0644\u0627\u062A \u0645\u0639 \u0634\u062E\u0635 \u0645\u0645\u064A\u0632", lang: "time" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0633\u0627\u0639\u062F\u0646\u064A \u0627\u0644\u0623\u062D\u0628\u0627\u0621 \u0641\u064A \u0627\u0644\u0645\u0634\u0627\u0631\u064A\u0639", lang: "service" }, b: { text: "\u0623\u0633\u062A\u0645\u062A\u0639 \u062D\u0642\u064B\u0627 \u0628\u062A\u0644\u0642\u064A \u0627\u0644\u0647\u062F\u0627\u064A\u0627 \u0645\u0646 \u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "gifts" } },
-    { a: { text: "\u0623\u0642\u062F\u0631 \u0627\u0644\u0623\u0634\u064A\u0627\u0621 \u0627\u0644\u0643\u062B\u064A\u0631\u0629 \u0627\u0644\u062A\u064A \u064A\u0641\u0639\u0644\u0647\u0627 \u0627\u0644\u0623\u0634\u062E\u0627\u0635 \u0627\u0644\u0645\u0645\u064A\u0632\u0648\u0646 \u0644\u064A", lang: "service" }, b: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0647\u062F\u0627\u064A\u0627 \u0645\u0635\u0646\u0648\u0639\u0629 \u064A\u062F\u0648\u064A\u064B\u0627 \u0645\u0646 \u0623\u0634\u062E\u0627\u0635 \u0645\u0645\u064A\u0632\u064A\u0646", lang: "gifts" } },
-    { a: { text: "\u0623\u0639\u0631\u0641 \u0623\u0646 \u0634\u062E\u0635\u064B\u0627 \u064A\u0641\u0643\u0631 \u0628\u064A \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u062F\u0645 \u0644\u064A \u0647\u062F\u064A\u0629", lang: "gifts" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0633\u0627\u0639\u062F\u0646\u064A \u0623\u062D\u062F \u0641\u064A \u0627\u0644\u0623\u0639\u0645\u0627\u0644 \u0627\u0644\u0645\u0646\u0632\u0644\u064A\u0629", lang: "service" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0641\u0639\u0644 \u0627\u0644\u0646\u0627\u0633 \u0623\u0634\u064A\u0627\u0621 \u0644\u0645\u0633\u0627\u0639\u062F\u062A\u064A", lang: "service" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0639\u0628\u0631 \u0627\u0644\u0646\u0627\u0633 \u0639\u0646 \u0627\u0647\u062A\u0645\u0627\u0645\u0647\u0645 \u0628\u0627\u0644\u0644\u0645\u0633", lang: "touch" } },
-    { a: { text: "\u0645\u0627 \u064A\u0641\u0639\u0644\u0647 \u0627\u0644\u0634\u062E\u0635 \u0644\u064A \u064A\u0624\u062B\u0631 \u0628\u064A \u0623\u0643\u062B\u0631 \u0645\u0645\u0627 \u064A\u0642\u0648\u0644", lang: "service" }, b: { text: "\u0627\u0644\u0639\u0646\u0627\u0642 \u064A\u0634\u0639\u0631\u0646\u064A \u0628\u0627\u0644\u062A\u0631\u0627\u0628\u0637 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0631", lang: "touch" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u0623\u0645\u0627\u0646 \u0639\u0646\u062F\u0645\u0627 \u064A\u0644\u0645\u0633\u0646\u064A \u0634\u062E\u0635 \u0645\u0645\u064A\u0632", lang: "touch" }, b: { text: "\u0623\u0641\u0639\u0627\u0644 \u0627\u0644\u062E\u062F\u0645\u0629 \u062A\u0634\u0639\u0631\u0646\u064A \u0628\u0627\u0644\u062D\u0628", lang: "service" } },
-    { a: { text: "\u0623\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0642\u062F\u0645 \u0644\u064A \u0627\u0644\u0646\u0627\u0633 \u0647\u062F\u0627\u064A\u0627", lang: "gifts" }, b: { text: "\u0623\u062D\u0628 \u0627\u0644\u0632\u064A\u0627\u0631\u0627\u062A \u0627\u0644\u0645\u0631\u064A\u062D\u0629 \u0645\u0639 \u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "time" } },
-    { a: { text: "\u0623\u062D\u0628 \u0642\u0636\u0627\u0621 \u0627\u0644\u0648\u0642\u062A \u0645\u0639 \u0627\u0644\u0623\u0635\u062F\u0642\u0627\u0621 \u0648\u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "time" }, b: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0647\u062F\u0627\u064A\u0627 \u0635\u063A\u064A\u0631\u0629 \u0645\u0646 \u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "gifts" } },
-    { a: { text: "\u0623\u0642\u062F\u0631 \u0639\u0646\u062F\u0645\u0627 \u064A\u0633\u062A\u0645\u0639 \u0644\u064A \u0623\u062D\u062F \u0628\u0635\u0628\u0631 \u062F\u0648\u0646 \u0645\u0642\u0627\u0637\u0639\u0629", lang: "time" }, b: { text: "\u0623\u0642\u062F\u0631 \u0639\u0646\u062F\u0645\u0627 \u064A\u062A\u0630\u0643\u0631 \u0623\u062D\u062F \u0627\u0644\u0645\u0646\u0627\u0633\u0628\u0627\u062A \u0628\u0647\u062F\u064A\u0629", lang: "gifts" } },
-    { a: { text: "\u0623\u062D\u0628 \u0627\u0644\u0630\u0647\u0627\u0628 \u0625\u0644\u0649 \u0623\u0645\u0627\u0643\u0646 \u0645\u0639 \u0627\u0644\u0623\u062D\u0628\u0627\u0621", lang: "time" }, b: { text: "\u0623\u062D\u0628 \u0645\u0633\u0643 \u0627\u0644\u0623\u064A\u062F\u064A \u0645\u0639 \u0627\u0644\u0623\u0634\u062E\u0627\u0635 \u0627\u0644\u0645\u0645\u064A\u0632\u064A\u0646", lang: "touch" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u0642\u0631\u0628 \u0645\u0646 \u0634\u062E\u0635 \u0639\u0646\u062F\u0645\u0627 \u0646\u062A\u062D\u062F\u062B \u0623\u0648 \u0646\u0641\u0639\u0644 \u0634\u064A\u0626\u064B\u0627 \u0645\u0639\u064B\u0627", lang: "time" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u0642\u0631\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0644\u0645\u0633\u0646\u064A \u0627\u0644\u0623\u062D\u0628\u0627\u0621 \u0643\u062B\u064A\u0631\u064B\u0627", lang: "touch" } },
-    { a: { text: "\u0623\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0644\u0645\u0633\u0646\u064A \u0627\u0644\u0623\u062D\u0628\u0627\u0621 \u0639\u0646\u062F \u0645\u0631\u0648\u0631\u0647\u0645", lang: "touch" }, b: { text: "\u0623\u062D\u0628 \u0642\u0636\u0627\u0621 \u0648\u0642\u062A \u0645\u062E\u0635\u0635 \u0645\u0639 \u0634\u0631\u064A\u0643\u064A", lang: "time" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u0636\u0639 \u0645\u0646 \u0623\u062D\u0628 \u0630\u0631\u0627\u0639\u0647 \u062D\u0648\u0644\u064A", lang: "touch" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u0623\u062A\u0644\u0642\u0649 \u0647\u062F\u064A\u0629 \u0645\u0645\u0646 \u0623\u062D\u0628", lang: "gifts" } },
-    { a: { text: "\u0623\u062D\u0628 \u0627\u0644\u062A\u0642\u0628\u064A\u0644 \u0645\u0646 \u0627\u0644\u0623\u0634\u062E\u0627\u0635 \u0627\u0644\u0642\u0631\u064A\u0628\u064A\u0646 \u0645\u0646\u064A", lang: "touch" }, b: { text: "\u0623\u062D\u0628 \u062A\u0644\u0642\u064A \u0647\u062F\u064A\u0629 \u0641\u064A\u0647\u0627 \u0643\u062B\u064A\u0631 \u0645\u0646 \u0627\u0644\u062A\u0641\u0643\u064A\u0631", lang: "gifts" } },
-    { a: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u062D\u062A\u0641\u0644 \u0634\u062E\u0635 \u0628\u0639\u064A\u062F \u0645\u064A\u0644\u0627\u062F\u064A \u0628\u0647\u062F\u064A\u0629", lang: "gifts" }, b: { text: "\u0623\u0634\u0639\u0631 \u0628\u0627\u0644\u062D\u0628 \u0639\u0646\u062F\u0645\u0627 \u064A\u062D\u0636\u0646\u0646\u064A \u0634\u062E\u0635 \u0641\u064A \u0639\u064A\u062F \u0645\u064A\u0644\u0627\u062F\u064A", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0642\u0648\u0644 \u0644\u064A '\u0623\u0646\u0627 \u0641\u062E\u0648\u0631 \u0641\u064A\u0643' \u0628\u0639\u062F \u064A\u0648\u0645 \u0635\u0639\u0628", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062A\u0648\u0644\u0649 \u0645\u0647\u0627\u0645\u064A \u0644\u0645\u0627 \u064A\u0634\u0648\u0641\u0646\u064A \u0645\u0636\u063A\u0648\u0637", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0635\u0644\u062D \u0634\u064A\u0621 \u0641\u064A \u0627\u0644\u0628\u064A\u062A \u0628\u062F\u0648\u0646 \u0645\u0627 \u0623\u0637\u0644\u0628", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062A\u0631\u0643 \u0644\u064A \u0631\u0633\u0627\u0644\u0629 \u062D\u0644\u0648\u0629 \u0623\u0644\u0642\u0627\u0647\u0627 \u0641\u064A \u0634\u0646\u0637\u062A\u064A", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0646\u0638\u0631 \u0641\u064A \u0639\u064A\u0648\u0646\u064A \u0648\u064A\u0642\u0648\u0644 '\u0623\u0646\u062A \u0623\u063A\u0644\u0649 \u0646\u0627\u0633 \u0639\u0646\u062F\u064A'", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0637\u0628\u062E \u0644\u064A \u0623\u0643\u0644\u062A\u064A \u0627\u0644\u0645\u0641\u0636\u0644\u0629 \u0628\u0639\u062F \u0623\u0633\u0628\u0648\u0639 \u0637\u0648\u064A\u0644", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0628\u0639\u062F \u0647\u0627\u062A\u0641\u0647 \u0648\u064A\u0633\u0645\u0639\u0646\u064A \u0628\u0643\u0644 \u0627\u0647\u062A\u0645\u0627\u0645 \u0644\u0645\u0627 \u0623\u062D\u0643\u064A \u0639\u0646 \u064A\u0648\u0645\u064A", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0642\u0648\u0644 \u0644\u064A \u0628\u0627\u0644\u062A\u062D\u062F\u064A\u062F \u0625\u064A\u0634 \u064A\u0639\u062C\u0628\u0647 \u0641\u064A\u0651\u064A", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0642\u0648\u0644 \u0644\u064A '\u0634\u0643\u0644\u0643 \u0631\u0648\u0639\u0629 \u0627\u0644\u064A\u0648\u0645' \u0648\u0623\u0646\u0627 \u0637\u0627\u0644\u0639", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062C\u0644\u0633 \u0645\u0639\u064A \u0628\u0647\u062F\u0648\u0621 \u0644\u0645\u0627 \u0623\u0645\u0631 \u0628\u0648\u0642\u062A \u0635\u0639\u0628", lang: "time" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062E\u0637\u0637 \u064A\u0648\u0645 \u0643\u0627\u0645\u0644 \u0646\u0642\u0636\u064A\u0647 \u0633\u0648\u0627 \u0628\u0633", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0631\u0633\u0644 \u0644\u064A \u0631\u0633\u0627\u0644\u0629 \u0635\u0648\u062A\u064A\u0629 \u064A\u0642\u0648\u0644 \u0641\u064A\u0647\u0627 \u0643\u0645 \u0623\u0646\u0627 \u063A\u0627\u0644\u064A \u0639\u0644\u064A\u0647", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062C\u064A\u0628 \u0644\u064A \u0647\u062F\u064A\u0629 \u0635\u063A\u064A\u0631\u0629 \u0644\u0623\u0646\u0647\u0627 \u0630\u0643\u0631\u062A\u0647 \u0641\u064A\u0651\u064A", lang: "gifts" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0643\u062A\u0628 \u0644\u064A \u0631\u0633\u0627\u0644\u0629 \u0637\u0648\u064A\u0644\u0629 \u0639\u0646 \u0645\u0643\u0627\u0646\u062A\u064A \u0639\u0646\u062F\u0647", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0634\u062C\u0639\u0646\u064A \u0644\u0645\u0627 \u0623\u0634\u0643 \u0641\u064A \u0646\u0641\u0633\u064A", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0641\u0627\u062C\u0626\u0646\u064A \u0628\u0623\u0634\u064A\u0627\u0621 \u0635\u063A\u064A\u0631\u0629 \u0639\u0644\u0649 \u0645\u062F\u0627\u0631 \u0627\u0644\u0623\u0633\u0628\u0648\u0639", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062E\u062A\u0627\u0631 \u0644\u064A \u0634\u064A\u0621 \u0645\u0645\u064A\u0632 \u0648\u0647\u0648 \u064A\u062A\u0633\u0648\u0642", lang: "gifts" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0634\u062C\u0639\u0646\u064A \u0642\u0628\u0644 \u0644\u062D\u0638\u0629 \u0645\u0647\u0645\u0629", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0631\u0633\u0644 \u0644\u064A \u0631\u0633\u0627\u0644\u0629 \u0637\u0648\u064A\u0644\u0629 \u064A\u0634\u0631\u062D \u0641\u064A\u0647\u0627 \u0644\u064A\u0634 \u064A\u0642\u062F\u0631\u0646\u064A", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062D\u0636\u0646\u0646\u064A \u062D\u0636\u0646 \u0637\u0648\u064A\u0644 \u0648\u062F\u0627\u0641\u064A \u0644\u0645\u0627 \u0623\u0631\u062C\u0639 \u0627\u0644\u0628\u064A\u062A", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0642\u0631\u0651\u0628 \u0648\u064A\u062C\u0644\u0633 \u062C\u0646\u0628\u064A \u0639\u0644\u0649 \u0627\u0644\u0643\u0646\u0628\u0629", lang: "touch" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0645\u062F\u062D\u0646\u064A \u0642\u062F\u0627\u0645 \u0627\u0644\u0646\u0627\u0633", lang: "words" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0642\u0648\u0644 \u0644\u064A '\u0623\u0642\u0628\u0644\u0643 \u0632\u064A \u0645\u0627 \u0623\u0646\u062A'", lang: "words" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0645\u0633\u0643 \u064A\u062F\u064A \u0648\u0625\u062D\u0646\u0627 \u0645\u0627\u0634\u064A\u064A\u0646 \u0633\u0648\u0627", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062E\u0635\u0635 \u0644\u064A \u0633\u0647\u0631\u0629 \u0643\u0627\u0645\u0644\u0629 \u0644\u0646\u0627 \u0628\u0633", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062A\u0648\u0644\u0649 \u0645\u0647\u0645\u0629 \u0636\u0627\u063A\u0637\u062A\u0646\u064A \u0639\u0634\u0627\u0646 \u0623\u0631\u062A\u0627\u062D", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0637\u064A\u0646\u064A \u0627\u0647\u062A\u0645\u0627\u0645\u0647 \u0627\u0644\u0643\u0627\u0645\u0644 \u0628\u062F\u0648\u0646 \u0645\u0627 \u064A\u062A\u0634\u062A\u062A", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0631\u0648\u062D \u064A\u062C\u064A\u0628 \u0644\u064A \u0634\u064A\u0621 \u0645\u0646 \u0645\u0643\u0627\u0646 \u0628\u0639\u064A\u062F", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0646\u062C\u0632 \u0645\u0647\u0645\u0629 \u0645\u0646 \u0642\u0627\u0626\u0645\u062A\u064A \u0642\u0628\u0644 \u0645\u0627 \u0623\u0637\u0644\u0628", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0627\u062E\u0630\u0646\u064A \u0631\u062D\u0644\u0629 \u0646\u0647\u0627\u064A\u0629 \u0623\u0633\u0628\u0648\u0639 \u0639\u0634\u0627\u0646 \u0646\u0643\u0648\u0646 \u0633\u0648\u0627", lang: "time" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0633\u0647\u0631 \u0645\u0639\u064A \u064A\u0633\u0627\u0639\u062F\u0646\u064A \u0623\u062E\u0644\u0635 \u0645\u0634\u0631\u0648\u0639", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062C\u064A\u0628 \u0644\u064A \u0647\u062F\u064A\u0629 \u0645\u0641\u0627\u062C\u0626\u0629 \u0628\u062F\u0648\u0646 \u0645\u0646\u0627\u0633\u0628\u0629", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u063A\u0633\u0644 \u0627\u0644\u0635\u062D\u0648\u0646 \u0628\u0639\u062F \u0627\u0644\u0639\u0634\u0627\u0639\u0634\u0627\u0646 \u0623\u0631\u062A\u0627\u062D", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0637\u064A\u0646\u064A \u0634\u064A\u0621 \u0635\u0646\u0639\u0647 \u0628\u0625\u064A\u062F\u0647", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0634\u0648\u0641 \u0634\u064A\u0621 \u064A\u0630\u0643\u0631\u0647 \u0641\u064A\u0651\u064A \u0641\u064A\u0634\u062A\u0631\u064A\u0647 \u0644\u064A", lang: "gifts" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0631\u062A\u0628 \u0627\u0644\u0628\u064A\u062A \u0643\u0644\u0647 \u0642\u0628\u0644 \u0645\u0627 \u0623\u0631\u062C\u0639", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0628\u064A \u0633\u064A\u0627\u0631\u062A\u064A \u0628\u0646\u0632\u064A\u0646 \u0628\u062F\u0648\u0646 \u0645\u0627 \u0623\u0637\u0644\u0628", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062F\u0644\u0643 \u0623\u0643\u062A\u0627\u0641\u064A \u0644\u0645\u0627 \u064A\u062D\u0633 \u0625\u0646\u064A \u0645\u062A\u0639\u0628", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062C\u0647\u0632 \u0644\u064A \u062D\u0645\u0627\u0645 \u062F\u0627\u0641\u064A \u0628\u0639\u062F \u064A\u0648\u0645 \u0634\u063A\u0644 \u0637\u0648\u064A\u0644", lang: "service" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062D\u0636\u0646\u0646\u064A \u0628\u0642\u0648\u0629 \u0644\u0645\u0627 \u0623\u0643\u0648\u0646 \u0632\u0639\u0644\u0627\u0646", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062D\u0637 \u0630\u0631\u0627\u0639\u0647 \u062D\u0648\u0644\u064A \u0644\u0645\u0627 \u0646\u0643\u0648\u0646 \u0628\u064A\u0646 \u0627\u0644\u0646\u0627\u0633", lang: "touch" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0635\u062D\u0649 \u0628\u062F\u0631\u064A \u064A\u062C\u0647\u0632 \u0644\u064A \u0642\u0647\u0648\u062A\u064A \u0642\u0628\u0644 \u0645\u0627 \u0623\u0628\u062F\u0623 \u064A\u0648\u0645\u064A", lang: "service" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0637\u064A\u0646\u064A \u0647\u062F\u064A\u0629 \u0639\u064A\u062F \u0645\u064A\u0644\u0627\u062F \u0645\u063A\u0644\u0641\u0629 \u0628\u0634\u0643\u0644 \u062D\u0644\u0648", lang: "gifts" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062E\u0637\u0637 \u0635\u0628\u0627\u062D \u0623\u062D\u062F \u0647\u0627\u062F\u064A \u0644\u0646\u0627 \u0628\u0633", lang: "time" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0645\u0634\u064A \u0645\u0639\u064A \u0645\u0634\u0648\u0627\u0631 \u0637\u0648\u064A\u0644 \u0648\u064A\u0633\u0623\u0644\u0646\u064A \u0639\u0646 \u0623\u062D\u0644\u0627\u0645\u064A", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062E\u062A\u0627\u0631 \u0644\u064A \u0643\u062A\u0627\u0628 \u064A\u0639\u0631\u0641 \u0625\u0646\u0647 \u0628\u064A\u0639\u062C\u0628\u0646\u064A", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0633\u0645\u0639\u0646\u064A \u0628\u0635\u0628\u0631 \u0628\u062F\u0648\u0646 \u0645\u0627 \u064A\u0637\u0627\u0644\u0639 \u0647\u0627\u062A\u0641\u0647", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062A\u0630\u0643\u0631 \u062A\u0627\u0631\u064A\u062E \u0645\u0645\u064A\u0632 \u0628\u064A\u0646\u0646\u0627 \u0628\u0647\u062F\u064A\u0629 \u0645\u062F\u0631\u0648\u0633\u0629", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0648\u062F\u064A\u0646\u064A \u0645\u0643\u0627\u0646 \u062C\u062F\u064A\u062F \u0648\u0646\u0633\u062A\u0643\u0634\u0641\u0647 \u0633\u0648\u0627", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0635\u0641\u0642 \u0644\u064A \u0623\u0648 \u064A\u0636\u063A\u0637 \u0639\u0644\u0649 \u064A\u062F\u064A \u0628\u0639\u062F \u062E\u0628\u0631 \u062D\u0644\u0648", lang: "touch" } },
+    { a: { text: "\u0623\u0646\u0627 \u0648\u0645\u0646 \u0623\u062D\u0628 \u0646\u0637\u0628\u062E \u0633\u0648\u0627 \u0648\u0646\u0633\u0648\u0644\u0641 \u0639\u0646 \u0643\u0644 \u0634\u064A\u0621", lang: "time" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0644\u0645\u0633 \u0638\u0647\u0631\u064A \u0628\u0631\u0641\u0642 \u0648\u0647\u0648 \u064A\u0645\u0631 \u062C\u0646\u0628\u064A", lang: "touch" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0644\u0639\u0628 \u0628\u0634\u0639\u0631\u064A \u0648\u0625\u062D\u0646\u0627 \u0646\u062A\u0641\u0631\u062C \u0641\u0644\u0645", lang: "touch" }, b: { text: "\u0623\u0646\u0627 \u0648\u0645\u0646 \u0623\u062D\u0628 \u0639\u0646\u062F\u0646\u0627 \u0633\u0647\u0631\u0629 \u0623\u0633\u0628\u0648\u0639\u064A\u0629 \u0628\u062F\u0648\u0646 \u062C\u0648\u0627\u0644\u0627\u062A", lang: "time" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062D\u0637 \u0630\u0631\u0627\u0639\u0647 \u062D\u0648\u0644\u064A \u0648\u0625\u062D\u0646\u0627 \u062C\u0627\u0644\u0633\u064A\u0646 \u0633\u0648\u0627", lang: "touch" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u062C\u064A\u0628 \u0644\u064A \u0648\u0631\u062F \u0623\u0648 \u0634\u064A\u0621 \u0623\u062D\u0628\u0647 \u0628\u062F\u0648\u0646 \u0645\u0646\u0627\u0633\u0628\u0629", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0628\u0648\u0633 \u062C\u0628\u0647\u062A\u064A \u0642\u0628\u0644 \u0645\u0627 \u064A\u0637\u0644\u0639", lang: "touch" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0637\u064A\u0646\u064A \u0647\u062F\u064A\u0629 \u062A\u062B\u0628\u062A \u0625\u0646\u0647 \u0641\u0639\u0644\u0627\u064B \u064A\u0639\u0631\u0641\u0646\u064A", lang: "gifts" } },
+    { a: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0641\u0627\u062C\u0626\u0646\u064A \u0628\u0647\u062F\u064A\u0629 \u0645\u0645\u064A\u0632\u0629 \u0641\u064A \u0639\u064A\u062F \u0645\u064A\u0644\u0627\u062F\u064A", lang: "gifts" }, b: { text: "\u0645\u0646 \u0623\u062D\u0628 \u064A\u0639\u0637\u064A\u0646\u064A \u0623\u062D\u0631\u0651 \u062D\u0636\u0646 \u0641\u064A \u0639\u064A\u062F \u0645\u064A\u0644\u0627\u062F\u064A", lang: "touch" } },
   ],
 };
 
@@ -169,67 +185,67 @@ const langColors = {
 
 const langDataEN = {
   words: {
-    meaning: "Actions don't always speak louder than words. Unsolicited compliments mean the world to you. Hearing 'I love you' is important \u2014 hearing the reasons behind it sends your spirits skyward.",
-    examples: ["\u{1F48C} Saying 'I love you' and explaining why", "\u{1F4F1} Sending thoughtful texts", "\u2728 Verbal compliments", "\u{1F4AA} Words of encouragement", "\u{1F64F} Expressing gratitude out loud"],
-    howToLove: ["Tell them specifically what you appreciate", "Send unexpected encouraging messages", "Write heartfelt notes", "Offer genuine, specific compliments", "Use kind words even in disagreements"],
-    whatHurts: "Insults, harsh criticism, or forgetting to acknowledge their efforts."
+    meaning: "Your heart lights up when someone puts their feelings into words. A genuine 'I'm proud of you' can carry you through the hardest week. You don't just want to be loved \u2014 you want to hear it, in detail, with feeling. The right words at the right time can make you feel like you can conquer the world.",
+    examples: ["\u{1F48C} Saying 'I love you' and explaining why", "\u{1F4F1} Sending thoughtful voice notes", "\u2728 Specific, genuine compliments", "\u{1F4AA} Words of encouragement before a big moment", "\u{1F64F} Expressing gratitude for the little things"],
+    howToLove: ["Tell them specifically what you appreciate about them", "Send unexpected encouraging messages during their day", "Write heartfelt notes and leave them to find", "Offer genuine, specific compliments \u2014 not generic ones", "Use kind words even during disagreements"],
+    whatHurts: "Harsh words cut deeper than anything. Insults, silent treatment, or forgetting to acknowledge what they do \u2014 these don't just hurt, they linger."
   },
   time: {
-    meaning: "Nothing says 'I love you' like full, undivided attention. Really being there \u2014 TV off, phone down \u2014 makes you feel truly special and loved.",
-    examples: ["\u{1F5E3}\uFE0F Meaningful conversations", "\u{1F6B6} Activities together", "\u{1F440} Active listening", "\u{1F4C5} Regular date nights", "\u{1F30D} Creating memories"],
-    howToLove: ["Put your phone away together", "Schedule regular one-on-one time", "Maintain eye contact", "Plan shared activities", "Be fully present \u2014 mentally too"],
-    whatHurts: "Distracted conversations, cancelled plans, or competing with a phone for attention."
+    meaning: "When someone gives you their undivided attention, everything else fades away. You don't need grand plans \u2014 just someone who is truly present. Phone down, eyes on you, fully there. That's when you feel most alive and most loved.",
+    examples: ["\u{1F5E3}\uFE0F Deep conversations that go late into the night", "\u{1F6B6} Exploring new places together", "\u{1F440} Being truly listened to", "\u{1F4C5} Regular no-phones date nights", "\u{1F30D} Creating shared memories"],
+    howToLove: ["Put your phone away when you're together", "Schedule regular one-on-one time and protect it", "Maintain eye contact and ask follow-up questions", "Plan shared activities that create memories", "Be fully present \u2014 mentally and emotionally"],
+    whatHurts: "Being distracted during conversations, constantly cancelling plans, or making them feel like they're competing with a screen for your attention."
   },
   gifts: {
-    meaning: "Not materialism \u2014 you thrive on the love and thought behind the gift. The perfect gift shows you are known, cared for, and prized.",
-    examples: ["\u{1F3AF} Thoughtful, personal gifts", "\u{1F33A} Small 'just because' surprises", "\u{1F3A8} Handmade or personalized items", "\u{1F91D} Being present during tough times", "\u{1F382} Remembering special occasions"],
-    howToLove: ["Keep a list of things they mention wanting", "Surprise them with small gifts randomly", "Put effort into presentation", "Give the gift of presence", "It's about thought, not price"],
-    whatHurts: "Forgotten birthdays, generic last-minute gifts, or no tangible expressions of thoughtfulness."
+    meaning: "It's never about the price tag \u2014 it's about the thought. When someone remembers a small thing you mentioned weeks ago and surprises you with it, your heart melts. A thoughtful gift tells you: 'I was thinking about you. I know you. You matter to me.'",
+    examples: ["\u{1F3AF} A gift that shows they truly know you", "\u{1F33A} Small 'just because' surprises", "\u{1F3A8} Something handmade or personalized", "\u{1F91D} Being physically present during tough times", "\u{1F382} Remembering dates that matter to you"],
+    howToLove: ["Keep a mental list of things they mention wanting", "Surprise them with small tokens \u2014 randomly, not just on occasions", "Put thought into how you present it", "Give the gift of your presence when they need you", "Remember: it's the thought behind it that speaks"],
+    whatHurts: "Forgotten birthdays, last-minute generic gifts, or the absence of any tangible reminder that they were on your mind."
   },
   service: {
-    meaning: "Can vacuuming be love? Absolutely! Anything you do to ease their burden speaks volumes. The words they want most: 'Let me do that for you.'",
-    examples: ["\u{1F3E0} Helping without being asked", "\u{1F373} Cooking a meal", "\u{1F527} Fixing something", "\u{1F4CB} Taking care of stressful tasks", "\u{1F680} Practical help during busy times"],
-    howToLove: ["Ask 'What can I help with today?'", "Notice stress and act before they ask", "Follow through \u2014 reliability matters deeply", "Do tasks cheerfully", "Anticipate needs proactively"],
-    whatHurts: "Broken promises, laziness, creating more work, or dismissing requests for help."
+    meaning: "When someone rolls up their sleeves to lighten your load, that's love in action. You don't need to hear 'I love you' \u2014 you need to see it. A partner who takes care of things before you even ask? That's your love language being spoken fluently.",
+    examples: ["\u{1F3E0} Doing something helpful without being asked", "\u{1F373} Cooking your favorite meal after a long day", "\u{1F527} Fixing something that's been bothering you", "\u{1F4CB} Taking over a stressful task", "\u{1F680} Showing up with practical help when life gets busy"],
+    howToLove: ["Ask 'What can I take off your plate today?'", "Notice when they're stressed and act before they ask", "Follow through on promises \u2014 reliability is love", "Do tasks with a cheerful heart, not reluctantly", "Anticipate needs and handle them proactively"],
+    whatHurts: "Broken promises hit hardest. Laziness, creating more work instead of helping, or brushing off requests for help feels like not being cared for."
   },
   touch: {
-    meaning: "Hugs, holding hands, thoughtful touches \u2014 all ways to show excitement, care, and love. Physical presence and accessibility are crucial.",
-    examples: ["\u{1F91D} Holding hands", "\u{1FAC2} Hugs hello and goodbye", "\u{1F590}\uFE0F Comforting shoulder touch", "\u{1F6CB}\uFE0F Sitting close together", "\u{1F48B} Gentle touch in passing"],
-    howToLove: ["Reach for their hand when walking", "Greet and part with a hug or kiss", "Offer physical comfort in tough moments", "Initiate casual affectionate contact", "Be intentional about non-sexual touch"],
-    whatHurts: "Physical neglect, long periods without affection, or recoiling from their touch."
+    meaning: "A warm hug after a hard day can heal what words can't reach. You feel most connected through physical closeness \u2014 holding hands, a gentle touch on the back, sitting close. It's not just about affection; it's about feeling safe, present, and deeply connected.",
+    examples: ["\u{1F91D} Reaching for your hand in public", "\u{1FAC2} Long hugs hello and goodbye", "\u{1F590}\uFE0F A comforting hand on your shoulder", "\u{1F6CB}\uFE0F Sitting close enough to touch", "\u{1F48B} A gentle touch as they walk past you"],
+    howToLove: ["Reach for their hand when walking together", "Greet them and say goodbye with a hug or kiss", "Offer physical comfort during tough moments", "Initiate casual, affectionate touch throughout the day", "Be intentional about non-sexual touch \u2014 it matters deeply"],
+    whatHurts: "Physical distance when you're together, long periods without affection, or pulling away from their touch \u2014 it feels like rejection, even if that's not what's meant."
   },
 };
 
 const langDataAR = {
   words: {
-    meaning: "\u0627\u0644\u0623\u0641\u0639\u0627\u0644 \u0644\u0627 \u062A\u062A\u062D\u062F\u062B \u062F\u0627\u0626\u0645\u064B\u0627 \u0628\u0635\u0648\u062A \u0623\u0639\u0644\u0649 \u0645\u0646 \u0627\u0644\u0643\u0644\u0645\u0627\u062A. \u0627\u0644\u0625\u0637\u0631\u0627\u0621\u0627\u062A \u0627\u0644\u0639\u0641\u0648\u064A\u0629 \u062A\u0639\u0646\u064A \u0644\u0643 \u0627\u0644\u0639\u0627\u0644\u0645. \u0633\u0645\u0627\u0639 '\u0623\u062D\u0628\u0643' \u0645\u0647\u0645 \u2014 \u0648\u0645\u0639\u0631\u0641\u0629 \u0627\u0644\u0633\u0628\u0628 \u064A\u0631\u0641\u0639 \u0645\u0639\u0646\u0648\u064A\u0627\u062A\u0643.",
-    examples: ["\u{1F48C} \u0642\u0648\u0644 '\u0623\u062D\u0628\u0643' \u0645\u0639 \u0627\u0644\u0633\u0628\u0628", "\u{1F4F1} \u0625\u0631\u0633\u0627\u0644 \u0631\u0633\u0627\u0626\u0644 \u0645\u062F\u0631\u0648\u0633\u0629", "\u2728 \u0625\u0637\u0631\u0627\u0621 \u0644\u0641\u0638\u064A", "\u{1F4AA} \u0643\u0644\u0645\u0627\u062A \u062A\u0634\u062C\u064A\u0639", "\u{1F64F} \u0627\u0644\u062A\u0639\u0628\u064A\u0631 \u0639\u0646 \u0627\u0644\u0627\u0645\u062A\u0646\u0627\u0646"],
-    howToLove: ["\u0623\u062E\u0628\u0631\u0647\u0645 \u0628\u0627\u0644\u062A\u062D\u062F\u064A\u062F \u0645\u0627 \u062A\u0642\u062F\u0631\u0647 \u0641\u064A\u0647\u0645", "\u0623\u0631\u0633\u0644 \u0631\u0633\u0627\u0626\u0644 \u062A\u0634\u062C\u064A\u0639 \u063A\u064A\u0631 \u0645\u062A\u0648\u0642\u0639\u0629", "\u0627\u0643\u062A\u0628 \u0631\u0633\u0627\u0626\u0644 \u0635\u0627\u062F\u0642\u0629", "\u0642\u062F\u0645 \u0625\u0637\u0631\u0627\u0621 \u062D\u0642\u064A\u0642\u064A \u0648\u0645\u062D\u062F\u062F", "\u0627\u0633\u062A\u062E\u062F\u0645 \u0643\u0644\u0645\u0627\u062A \u0644\u0637\u064A\u0641\u0629 \u062D\u062A\u0649 \u0641\u064A \u0627\u0644\u062E\u0644\u0627\u0641\u0627\u062A"],
-    whatHurts: "\u0627\u0644\u0625\u0647\u0627\u0646\u0629\u060C \u0627\u0644\u0646\u0642\u062F \u0627\u0644\u0642\u0627\u0633\u064A\u060C \u0623\u0648 \u0646\u0633\u064A\u0627\u0646 \u062A\u0642\u062F\u064A\u0631 \u062C\u0647\u0648\u062F\u0647\u0645."
+    meaning: "\u0642\u0644\u0628\u0643 \u064A\u0636\u064A\u0621 \u0644\u0645\u0627 \u0623\u062D\u062F \u064A\u0639\u0628\u0631 \u0639\u0646 \u0645\u0634\u0627\u0639\u0631\u0647 \u0628\u0627\u0644\u0643\u0644\u0627\u0645. \u0643\u0644\u0645\u0629 '\u0623\u0646\u0627 \u0641\u062E\u0648\u0631 \u0641\u064A\u0643' \u0627\u0644\u0635\u0627\u062F\u0642\u0629 \u062A\u0642\u062F\u0631 \u062A\u0634\u064A\u0644\u0643 \u0623\u0635\u0639\u0628 \u0623\u0633\u0628\u0648\u0639. \u0623\u0646\u062A \u0645\u0627 \u062A\u0628\u064A \u0628\u0633 \u062D\u0628 \u2014 \u062A\u0628\u064A \u062A\u0633\u0645\u0639\u0647\u060C \u0628\u0627\u0644\u062A\u0641\u0635\u064A\u0644\u060C \u0628\u0625\u062D\u0633\u0627\u0633.",
+    examples: ["\u{1F48C} \u064A\u0642\u0648\u0644 '\u0623\u062D\u0628\u0643' \u0648\u064A\u0634\u0631\u062D \u0644\u064A\u0634", "\u{1F4F1} \u064A\u0631\u0633\u0644 \u0631\u0633\u0627\u0626\u0644 \u0635\u0648\u062A\u064A\u0629 \u0645\u0646 \u0627\u0644\u0642\u0644\u0628", "\u2728 \u0625\u0637\u0631\u0627\u0621 \u0645\u062D\u062F\u062F \u0648\u0635\u0627\u062F\u0642", "\u{1F4AA} \u062A\u0634\u062C\u064A\u0639 \u0642\u0628\u0644 \u0644\u062D\u0638\u0629 \u0645\u0647\u0645\u0629", "\u{1F64F} \u0634\u0643\u0631 \u0639\u0644\u0649 \u0627\u0644\u062A\u0641\u0627\u0635\u064A\u0644 \u0627\u0644\u0635\u063A\u064A\u0631\u0629"],
+    howToLove: ["\u0642\u0648\u0644\u0647 \u0628\u0627\u0644\u0636\u0628\u0637 \u0625\u064A\u0634 \u062A\u0642\u062F\u0631 \u0641\u064A\u0647", "\u0627\u0631\u0633\u0644 \u0631\u0633\u0627\u0626\u0644 \u062A\u0634\u062C\u064A\u0639 \u0645\u0641\u0627\u062C\u0626\u0629 \u062E\u0644\u0627\u0644 \u064A\u0648\u0645\u0647", "\u0627\u0643\u062A\u0628 \u0631\u0633\u0627\u0626\u0644 \u0635\u0627\u062F\u0642\u0629 \u0648\u062E\u0644\u0647\u0627 \u064A\u0644\u0642\u0627\u0647\u0627", "\u0627\u0645\u062F\u062D\u0647 \u0628\u0634\u0643\u0644 \u0645\u062D\u062F\u062F \u2014 \u0645\u0648 \u0643\u0644\u0627\u0645 \u0639\u0627\u0645", "\u0627\u0633\u062A\u062E\u062F\u0645 \u0643\u0644\u0645\u0627\u062A \u0644\u0637\u064A\u0641\u0629 \u062D\u062A\u0649 \u0648\u0642\u062A \u0627\u0644\u062E\u0644\u0627\u0641"],
+    whatHurts: "\u0627\u0644\u0643\u0644\u0645\u0627\u062A \u0627\u0644\u0642\u0627\u0633\u064A\u0629 \u062A\u062C\u0631\u062D \u0623\u0643\u062B\u0631 \u0645\u0646 \u0623\u064A \u0634\u064A\u0621. \u0627\u0644\u0625\u0647\u0627\u0646\u0629\u060C \u0627\u0644\u0633\u0643\u0648\u062A \u0627\u0644\u0639\u0642\u0627\u0628\u064A\u060C \u0623\u0648 \u062A\u062C\u0627\u0647\u0644 \u062C\u0647\u0648\u062F\u0647\u0645 \u2014 \u0645\u0627 \u062A\u062C\u0631\u062D \u0628\u0633\u060C \u062A\u0638\u0644 \u062A\u0648\u062C\u0639."
   },
   time: {
-    meaning: "\u0644\u0627 \u0634\u064A\u0621 \u064A\u0642\u0648\u0644 '\u0623\u062D\u0628\u0643' \u0645\u062B\u0644 \u0627\u0644\u0627\u0647\u062A\u0645\u0627\u0645 \u0627\u0644\u0643\u0627\u0645\u0644. \u0627\u0644\u062A\u0648\u0627\u062C\u062F \u0627\u0644\u062D\u0642\u064A\u0642\u064A \u2014 \u0628\u062F\u0648\u0646 \u0647\u0627\u062A\u0641 \u0623\u0648 \u062A\u0644\u0641\u0632\u064A\u0648\u0646 \u2014 \u064A\u062C\u0639\u0644\u0643 \u062A\u0634\u0639\u0631 \u0628\u0623\u0646\u0643 \u0645\u0645\u064A\u0632.",
-    examples: ["\u{1F5E3}\uFE0F \u0645\u062D\u0627\u062F\u062B\u0627\u062A \u0639\u0645\u064A\u0642\u0629", "\u{1F6B6} \u0623\u0646\u0634\u0637\u0629 \u0645\u0634\u062A\u0631\u0643\u0629", "\u{1F440} \u0627\u0644\u0627\u0633\u062A\u0645\u0627\u0639 \u0627\u0644\u0641\u0639\u0627\u0644", "\u{1F4C5} \u0645\u0648\u0627\u0639\u064A\u062F \u0645\u0646\u062A\u0638\u0645\u0629", "\u{1F30D} \u0635\u0646\u0639 \u0630\u0643\u0631\u064A\u0627\u062A"],
-    howToLove: ["\u0636\u0639 \u0647\u0627\u062A\u0641\u0643 \u062C\u0627\u0646\u0628\u064B\u0627 \u0639\u0646\u062F\u0645\u0627 \u062A\u0643\u0648\u0646\u0648\u0646 \u0645\u0639\u064B\u0627", "\u062E\u0635\u0635 \u0648\u0642\u062A\u064B\u0627 \u0645\u0646\u062A\u0638\u0645\u064B\u0627 \u0628\u062F\u0648\u0646 \u062A\u0634\u062A\u064A\u062A", "\u062D\u0627\u0641\u0638 \u0639\u0644\u0649 \u0627\u0644\u062A\u0648\u0627\u0635\u0644 \u0627\u0644\u0628\u0635\u0631\u064A", "\u062E\u0637\u0637 \u0644\u0623\u0646\u0634\u0637\u0629 \u0645\u0634\u062A\u0631\u0643\u0629", "\u0643\u0646 \u062D\u0627\u0636\u0631\u064B\u0627 \u0630\u0647\u0646\u064A\u064B\u0627 \u0623\u064A\u0636\u064B\u0627"],
-    whatHurts: "\u0627\u0644\u0645\u062D\u0627\u062F\u062B\u0627\u062A \u0627\u0644\u0645\u0634\u062A\u062A\u0629\u060C \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u062E\u0637\u0637\u060C \u0623\u0648 \u0627\u0644\u062A\u0646\u0627\u0641\u0633 \u0645\u0639 \u0627\u0644\u0647\u0627\u062A\u0641 \u0639\u0644\u0649 \u0627\u0647\u062A\u0645\u0627\u0645\u0643."
+    meaning: "\u0644\u0645\u0627 \u0623\u062D\u062F \u064A\u0639\u0637\u064A\u0643 \u0627\u0647\u062A\u0645\u0627\u0645\u0647 \u0627\u0644\u0643\u0627\u0645\u0644\u060C \u0627\u0644\u062F\u0646\u064A\u0627 \u0643\u0644\u0647\u0627 \u062A\u062E\u062A\u0641\u064A. \u0645\u0627 \u062A\u062D\u062A\u0627\u062C \u062E\u0637\u0637 \u0643\u0628\u064A\u0631\u0629 \u2014 \u0628\u0633 \u0634\u062E\u0635 \u0645\u0648\u062C\u0648\u062F \u0641\u0639\u0644\u0627\u064B. \u0627\u0644\u062C\u0648\u0627\u0644 \u0628\u0639\u064A\u062F\u060C \u0627\u0644\u0639\u064A\u0648\u0646 \u0639\u0644\u064A\u0643\u060C \u0648\u0643\u0644\u0647 \u0644\u0643. \u0647\u0630\u0627 \u0644\u0645\u0627 \u062A\u062D\u0633 \u0625\u0646\u0643 \u0645\u062D\u0628\u0648\u0628 \u0641\u0639\u0644\u0627\u064B.",
+    examples: ["\u{1F5E3}\uFE0F \u0633\u0648\u0627\u0644\u0641 \u0639\u0645\u064A\u0642\u0629 \u062A\u0637\u0648\u0644 \u0644\u0622\u062E\u0631 \u0627\u0644\u0644\u064A\u0644", "\u{1F6B6} \u0627\u0643\u062A\u0634\u0627\u0641 \u0623\u0645\u0627\u0643\u0646 \u062C\u062F\u064A\u062F\u0629 \u0633\u0648\u0627", "\u{1F440} \u0627\u0633\u062A\u0645\u0627\u0639 \u062D\u0642\u064A\u0642\u064A \u0628\u062F\u0648\u0646 \u062A\u0634\u062A\u064A\u062A", "\u{1F4C5} \u0633\u0647\u0631\u0627\u062A \u0645\u0646\u062A\u0638\u0645\u0629 \u0628\u062F\u0648\u0646 \u062C\u0648\u0627\u0644\u0627\u062A", "\u{1F30D} \u0635\u0646\u0639 \u0630\u0643\u0631\u064A\u0627\u062A \u0645\u0634\u062A\u0631\u0643\u0629"],
+    howToLove: ["\u0627\u0628\u0639\u062F \u062C\u0648\u0627\u0644\u0643 \u0644\u0645\u0627 \u062A\u0643\u0648\u0646\u0648\u0646 \u0633\u0648\u0627", "\u062E\u0635\u0635 \u0648\u0642\u062A \u0645\u0646\u062A\u0638\u0645 \u0644\u0643\u0645 \u0628\u0633 \u0648\u062D\u0627\u0641\u0638 \u0639\u0644\u064A\u0647", "\u062A\u0648\u0627\u0635\u0644 \u0628\u0635\u0631\u064A \u0648\u0627\u0633\u0623\u0644 \u0623\u0633\u0626\u0644\u0629 \u0645\u062A\u0627\u0628\u0639\u0629", "\u062E\u0637\u0637 \u0623\u0646\u0634\u0637\u0629 \u062A\u0635\u0646\u0639\u0648\u0646 \u0641\u064A\u0647\u0627 \u0630\u0643\u0631\u064A\u0627\u062A", "\u0643\u0646 \u062D\u0627\u0636\u0631 \u0630\u0647\u0646\u064A\u064B\u0627 \u0648\u0639\u0627\u0637\u0641\u064A\u064B\u0627"],
+    whatHurts: "\u0627\u0644\u062A\u0634\u062A\u062A \u0648\u0642\u062A \u0627\u0644\u0633\u0648\u0627\u0644\u0641\u060C \u0625\u0644\u063A\u0627\u0621 \u0627\u0644\u062E\u0637\u0637 \u0628\u0627\u0633\u062A\u0645\u0631\u0627\u0631\u060C \u0623\u0648 \u0625\u0646\u0643 \u062A\u062D\u0633 \u0625\u0646\u0643 \u062A\u0646\u0627\u0641\u0633 \u0627\u0644\u0634\u0627\u0634\u0629 \u0639\u0644\u0649 \u0627\u0647\u062A\u0645\u0627\u0645\u0647\u0645."
   },
   gifts: {
-    meaning: "\u0644\u064A\u0633 \u0645\u0627\u062F\u064A\u0629 \u2014 \u0623\u0646\u062A \u062A\u0632\u062F\u0647\u0631 \u0628\u0627\u0644\u062D\u0628 \u0648\u0627\u0644\u062A\u0641\u0643\u064A\u0631 \u0648\u0631\u0627\u0621 \u0627\u0644\u0647\u062F\u064A\u0629. \u0627\u0644\u0647\u062F\u064A\u0629 \u0627\u0644\u0645\u062B\u0627\u0644\u064A\u0629 \u062A\u0638\u0647\u0631 \u0623\u0646\u0643 \u0645\u0639\u0631\u0648\u0641 \u0648\u0645\u0642\u062F\u0631.",
-    examples: ["\u{1F3AF} \u0647\u062F\u0627\u064A\u0627 \u0645\u062F\u0631\u0648\u0633\u0629", "\u{1F33A} \u0645\u0641\u0627\u062C\u0622\u062A \u0635\u063A\u064A\u0631\u0629", "\u{1F3A8} \u0647\u062F\u0627\u064A\u0627 \u0645\u0635\u0646\u0648\u0639\u0629 \u064A\u062F\u0648\u064A\u064B\u0627", "\u{1F91D} \u0627\u0644\u062A\u0648\u0627\u062C\u062F \u0641\u064A \u0627\u0644\u0623\u0648\u0642\u0627\u062A \u0627\u0644\u0635\u0639\u0628\u0629", "\u{1F382} \u062A\u0630\u0643\u0631 \u0627\u0644\u0645\u0646\u0627\u0633\u0628\u0627\u062A"],
-    howToLove: ["\u0627\u062D\u0641\u0638 \u0642\u0627\u0626\u0645\u0629 \u0628\u0645\u0627 \u064A\u0630\u0643\u0631\u0648\u0646\u0647", "\u0641\u0627\u062C\u0626\u0647\u0645 \u0628\u0647\u062F\u0627\u064A\u0627 \u0635\u063A\u064A\u0631\u0629 \u0639\u0634\u0648\u0627\u0626\u064A\u064B\u0627", "\u0627\u0647\u062A\u0645 \u0628\u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0648\u0627\u0644\u0628\u0637\u0627\u0642\u0629", "\u0642\u062F\u0645 \u0647\u062F\u064A\u0629 \u062A\u0648\u0627\u062C\u062F\u0643", "\u0627\u0644\u0645\u0647\u0645 \u0627\u0644\u0641\u0643\u0631\u0629 \u0644\u064A\u0633 \u0627\u0644\u0633\u0639\u0631"],
-    whatHurts: "\u0646\u0633\u064A\u0627\u0646 \u0623\u0639\u064A\u0627\u062F \u0627\u0644\u0645\u064A\u0644\u0627\u062F\u060C \u0647\u062F\u0627\u064A\u0627 \u0639\u0634\u0648\u0627\u0626\u064A\u0629\u060C \u0623\u0648 \u063A\u064A\u0627\u0628 \u0627\u0644\u062A\u0639\u0628\u064A\u0631\u0627\u062A \u0627\u0644\u0645\u0644\u0645\u0648\u0633\u0629."
+    meaning: "\u0645\u0648 \u0645\u0648\u0636\u0648\u0639 \u0633\u0639\u0631 \u0623\u0628\u062F\u064B\u0627 \u2014 \u0627\u0644\u0645\u0648\u0636\u0648\u0639 \u0625\u0646 \u0623\u062D\u062F \u0641\u0643\u0631 \u0641\u064A\u0643. \u0644\u0645\u0627 \u0634\u062E\u0635 \u064A\u062A\u0630\u0643\u0631 \u0634\u064A\u0621 \u0630\u0643\u0631\u062A\u0647 \u0645\u0646 \u0623\u0633\u0627\u0628\u064A\u0639 \u0648\u064A\u0641\u0627\u062C\u0626\u0643 \u0641\u064A\u0647\u060C \u0642\u0644\u0628\u0643 \u064A\u0630\u0648\u0628. \u0627\u0644\u0647\u062F\u064A\u0629 \u062A\u0642\u0648\u0644: '\u0643\u0646\u062A \u0623\u0641\u0643\u0631 \u0641\u064A\u0643. \u0623\u0646\u0627 \u0623\u0639\u0631\u0641\u0643. \u0623\u0646\u062A \u0645\u0647\u0645.'",
+    examples: ["\u{1F3AF} \u0647\u062F\u064A\u0629 \u062A\u062B\u0628\u062A \u0625\u0646\u0647 \u0641\u0639\u0644\u0627\u064B \u064A\u0639\u0631\u0641\u0643", "\u{1F33A} \u0645\u0641\u0627\u062C\u0622\u062A \u0635\u063A\u064A\u0631\u0629 \u0628\u062F\u0648\u0646 \u0645\u0646\u0627\u0633\u0628\u0629", "\u{1F3A8} \u0634\u064A\u0621 \u0645\u0635\u0646\u0648\u0639 \u0628\u0625\u064A\u062F\u0647 \u0623\u0648 \u0645\u062E\u0635\u0635 \u0644\u0643", "\u{1F91D} \u062A\u0648\u0627\u062C\u062F\u0647 \u0641\u064A \u0623\u0648\u0642\u0627\u062A\u0643 \u0627\u0644\u0635\u0639\u0628\u0629", "\u{1F382} \u062A\u0630\u0643\u0631 \u0627\u0644\u062A\u0648\u0627\u0631\u064A\u062E \u0627\u0644\u0644\u064A \u062A\u0647\u0645\u0643"],
+    howToLove: ["\u0627\u062D\u0641\u0638 \u0642\u0627\u0626\u0645\u0629 \u0628\u0627\u0644\u0623\u0634\u064A\u0627\u0621 \u0627\u0644\u0644\u064A \u064A\u0630\u0643\u0631\u0647\u0627", "\u0641\u0627\u062C\u0626\u0647 \u0628\u0623\u0634\u064A\u0627\u0621 \u0635\u063A\u064A\u0631\u0629 \u0628\u062F\u0648\u0646 \u0645\u0646\u0627\u0633\u0628\u0629", "\u0627\u0647\u062A\u0645 \u0628\u0627\u0644\u062A\u063A\u0644\u064A\u0641 \u0648\u0627\u0644\u062A\u0642\u062F\u064A\u0645", "\u0643\u0646 \u0645\u0648\u062C\u0648\u062F \u0644\u0645\u0627 \u064A\u062D\u062A\u0627\u062C\u0643", "\u0627\u0644\u0641\u0643\u0631\u0629 \u0647\u064A \u0627\u0644\u0644\u064A \u062A\u062A\u0643\u0644\u0645\u060C \u0645\u0648 \u0627\u0644\u0633\u0639\u0631"],
+    whatHurts: "\u0646\u0633\u064A\u0627\u0646 \u0627\u0644\u0645\u0646\u0627\u0633\u0628\u0627\u062A\u060C \u0647\u062F\u0627\u064A\u0627 \u0627\u0644\u0644\u062D\u0638\u0629 \u0627\u0644\u0623\u062E\u064A\u0631\u0629 \u0627\u0644\u0639\u0634\u0648\u0627\u0626\u064A\u0629\u060C \u0623\u0648 \u063A\u064A\u0627\u0628 \u0623\u064A \u062A\u0630\u0643\u064A\u0631 \u0645\u0644\u0645\u0648\u0633 \u0625\u0646\u0643 \u0643\u0646\u062A \u0639\u0644\u0649 \u0628\u0627\u0644\u0647\u0645."
   },
   service: {
-    meaning: "\u0647\u0644 \u064A\u0645\u0643\u0646 \u0644\u062A\u0646\u0638\u064A\u0641 \u0627\u0644\u0628\u064A\u062A \u0623\u0646 \u064A\u0643\u0648\u0646 \u062A\u0639\u0628\u064A\u0631\u064B\u0627 \u0639\u0646 \u0627\u0644\u062D\u0628\u061F \u0628\u0627\u0644\u062A\u0623\u0643\u064A\u062F! \u0643\u0644 \u0645\u0627 \u062A\u0641\u0639\u0644\u0647 \u0644\u062A\u062E\u0641\u064A\u0641 \u0623\u0639\u0628\u0627\u0626\u0647\u0645 \u064A\u062A\u062D\u062F\u062B \u0628\u0635\u0648\u062A \u0639\u0627\u0644\u064D.",
-    examples: ["\u{1F3E0} \u0627\u0644\u0645\u0633\u0627\u0639\u062F\u0629 \u062F\u0648\u0646 \u0637\u0644\u0628", "\u{1F373} \u0637\u0628\u062E \u0648\u062C\u0628\u0629", "\u{1F527} \u0625\u0635\u0644\u0627\u062D \u0634\u064A\u0621", "\u{1F4CB} \u062A\u0648\u0644\u064A \u0627\u0644\u0645\u0647\u0627\u0645 \u0627\u0644\u0645\u0631\u0647\u0642\u0629", "\u{1F680} \u0645\u0633\u0627\u0639\u062F\u0629 \u0639\u0645\u0644\u064A\u0629 \u0641\u064A \u0627\u0644\u0623\u0648\u0642\u0627\u062A \u0627\u0644\u0645\u0632\u062D\u0648\u0645\u0629"],
-    howToLove: ["\u0627\u0633\u0623\u0644 '\u0643\u064A\u0641 \u0623\u0633\u0627\u0639\u062F\u0643 \u0627\u0644\u064A\u0648\u0645\u061F'", "\u0644\u0627\u062D\u0638 \u0645\u0627 \u064A\u0648\u062A\u0631\u0647\u0645 \u0648\u062A\u0635\u0631\u0641 \u0642\u0628\u0644 \u0627\u0644\u0637\u0644\u0628", "\u0627\u0644\u062A\u0632\u0645 \u0628\u0648\u0639\u0648\u062F\u0643 \u2014 \u0627\u0644\u0645\u0648\u062B\u0648\u0642\u064A\u0629 \u0645\u0647\u0645\u0629 \u062C\u062F\u064B\u0627", "\u0627\u0641\u0639\u0644 \u0627\u0644\u0645\u0647\u0627\u0645 \u0628\u0633\u0639\u0627\u062F\u0629", "\u062A\u0648\u0642\u0639 \u0627\u0644\u0627\u062D\u062A\u064A\u0627\u062C\u0627\u062A \u0645\u0633\u0628\u0642\u064B\u0627"],
-    whatHurts: "\u0627\u0644\u0648\u0639\u0648\u062F \u0627\u0644\u0645\u0643\u0633\u0648\u0631\u0629\u060C \u0627\u0644\u0643\u0633\u0644\u060C \u0623\u0648 \u0631\u0641\u0636 \u0637\u0644\u0628\u0627\u062A \u0627\u0644\u0645\u0633\u0627\u0639\u062F\u0629."
+    meaning: "\u0644\u0645\u0627 \u0623\u062D\u062F \u064A\u0634\u0645\u0631 \u0639\u0646 \u0633\u0627\u0639\u062F\u0647 \u0639\u0634\u0627\u0646 \u064A\u062E\u0641\u0641 \u0639\u0646\u0643\u060C \u0647\u0630\u0627 \u0627\u0644\u062D\u0628 \u0627\u0644\u0641\u0639\u0644\u064A. \u0645\u0627 \u062A\u062D\u062A\u0627\u062C \u062A\u0633\u0645\u0639 '\u0623\u062D\u0628\u0643' \u2014 \u062A\u062D\u062A\u0627\u062C \u062A\u0634\u0648\u0641\u0647\u0627. \u0634\u0631\u064A\u0643 \u064A\u0646\u062C\u0632 \u0627\u0644\u0623\u0634\u064A\u0627\u0621 \u0642\u0628\u0644 \u0645\u0627 \u062A\u0637\u0644\u0628\u061F \u0647\u0630\u0627 \u064A\u062A\u0643\u0644\u0645 \u0644\u063A\u062A\u0643 \u0628\u0637\u0644\u0627\u0642\u0629.",
+    examples: ["\u{1F3E0} \u064A\u0633\u0627\u0639\u062F \u0628\u062F\u0648\u0646 \u0645\u0627 \u062A\u0637\u0644\u0628", "\u{1F373} \u064A\u0637\u0628\u062E \u0644\u0643 \u0623\u0643\u0644\u062A\u0643 \u0627\u0644\u0645\u0641\u0636\u0644\u0629 \u0628\u0639\u062F \u064A\u0648\u0645 \u0637\u0648\u064A\u0644", "\u{1F527} \u064A\u0635\u0644\u062D \u0634\u064A\u0621 \u0643\u0627\u0646 \u064A\u0632\u0639\u062C\u0643", "\u{1F4CB} \u064A\u062A\u0648\u0644\u0649 \u0645\u0647\u0645\u0629 \u0636\u0627\u063A\u0637\u062A\u0643", "\u{1F680} \u064A\u0633\u0627\u0639\u062F\u0643 \u0639\u0645\u0644\u064A\u064B\u0627 \u0644\u0645\u0627 \u0627\u0644\u062D\u064A\u0627\u0629 \u062A\u0643\u0648\u0646 \u0645\u0632\u062D\u0648\u0645\u0629"],
+    howToLove: ["\u0627\u0633\u0623\u0644 '\u0625\u064A\u0634 \u0623\u0642\u062F\u0631 \u0623\u0634\u064A\u0644 \u0639\u0646\u0643 \u0627\u0644\u064A\u0648\u0645\u061F'", "\u0644\u0627\u062D\u0638 \u0645\u062A\u0649 \u064A\u0643\u0648\u0646 \u0645\u062A\u0639\u0628 \u0648\u062A\u0635\u0631\u0641 \u0642\u0628\u0644 \u0645\u0627 \u064A\u0637\u0644\u0628", "\u0627\u0644\u062A\u0632\u0645 \u0628\u0648\u0639\u0648\u062F\u0643 \u2014 \u0627\u0644\u0645\u0648\u062B\u0648\u0642\u064A\u0629 = \u062D\u0628", "\u0627\u0641\u0639\u0644 \u0627\u0644\u0645\u0647\u0627\u0645 \u0628\u0646\u0641\u0633 \u0637\u064A\u0628\u0629 \u0645\u0648 \u0628\u062A\u0630\u0645\u0631", "\u062A\u0648\u0642\u0639 \u0627\u062D\u062A\u064A\u0627\u062C\u0627\u062A\u0647 \u0648\u0627\u0633\u0628\u0642\u0647\u0627"],
+    whatHurts: "\u0627\u0644\u0648\u0639\u0648\u062F \u0627\u0644\u0645\u0643\u0633\u0648\u0631\u0629 \u0647\u064A \u0623\u0643\u062B\u0631 \u0634\u064A\u0621 \u064A\u0648\u062C\u0639. \u0627\u0644\u0643\u0633\u0644\u060C \u0623\u0648 \u0625\u0646\u0643 \u062A\u0632\u064A\u062F \u0627\u0644\u0639\u0628\u0621 \u0628\u062F\u0644 \u0645\u0627 \u062A\u062E\u0641\u0641\u0647\u060C \u0623\u0648 \u062A\u0637\u0646\u0634 \u0637\u0644\u0628\u0627\u062A \u0627\u0644\u0645\u0633\u0627\u0639\u062F\u0629."
   },
   touch: {
-    meaning: "\u0627\u0644\u0639\u0646\u0627\u0642\u060C \u0645\u0633\u0643 \u0627\u0644\u0623\u064A\u062F\u064A\u060C \u0627\u0644\u0644\u0645\u0633\u0627\u062A \u0627\u0644\u0645\u062F\u0631\u0648\u0633\u0629 \u2014 \u0643\u0644\u0647\u0627 \u0637\u0631\u0642 \u0644\u0644\u062A\u0639\u0628\u064A\u0631 \u0639\u0646 \u0627\u0644\u0627\u0647\u062A\u0645\u0627\u0645 \u0648\u0627\u0644\u062D\u0628. \u0627\u0644\u062A\u0648\u0627\u062C\u062F \u0627\u0644\u062C\u0633\u062F\u064A \u0636\u0631\u0648\u0631\u064A.",
-    examples: ["\u{1F91D} \u0645\u0633\u0643 \u0627\u0644\u0623\u064A\u062F\u064A", "\u{1FAC2} \u0627\u0644\u0639\u0646\u0627\u0642 \u0639\u0646\u062F \u0627\u0644\u0644\u0642\u0627\u0621 \u0648\u0627\u0644\u0648\u062F\u0627\u0639", "\u{1F590}\uFE0F \u0644\u0645\u0633\u0629 \u0639\u0644\u0649 \u0627\u0644\u0643\u062A\u0641", "\u{1F6CB}\uFE0F \u0627\u0644\u062C\u0644\u0648\u0633 \u0628\u0627\u0644\u0642\u0631\u0628", "\u{1F48B} \u0644\u0645\u0633\u0629 \u0644\u0637\u064A\u0641\u0629 \u0639\u0627\u0628\u0631\u0629"],
-    howToLove: ["\u0627\u0645\u0633\u0643 \u064A\u062F\u0647\u0645 \u0639\u0646\u062F \u0627\u0644\u0645\u0634\u064A", "\u0627\u0633\u062A\u0642\u0628\u0644\u0647\u0645 \u0648\u0648\u062F\u0639\u0647\u0645 \u0628\u0639\u0646\u0627\u0642", "\u0642\u062F\u0645 \u0631\u0627\u062D\u0629 \u062C\u0633\u062F\u064A\u0629 \u0641\u064A \u0627\u0644\u0644\u062D\u0638\u0627\u062A \u0627\u0644\u0635\u0639\u0628\u0629", "\u0628\u0627\u062F\u0631 \u0628\u0627\u0644\u062A\u0648\u0627\u0635\u0644 \u0627\u0644\u0639\u0627\u0637\u0641\u064A", "\u0643\u0646 \u0645\u062A\u0639\u0645\u062F\u064B\u0627 \u0641\u064A \u0627\u0644\u0644\u0645\u0633 \u0627\u0644\u064A\u0648\u0645\u064A"],
-    whatHurts: "\u0627\u0644\u0625\u0647\u0645\u0627\u0644 \u0627\u0644\u062C\u0633\u062F\u064A\u060C \u0641\u062A\u0631\u0627\u062A \u0637\u0648\u064A\u0644\u0629 \u0628\u062F\u0648\u0646 \u062D\u0646\u0627\u0646\u060C \u0623\u0648 \u0627\u0644\u0627\u0628\u062A\u0639\u0627\u062F \u0639\u0646 \u0644\u0645\u0633\u062A\u0647\u0645."
+    meaning: "\u062D\u0636\u0646 \u062F\u0627\u0641\u064A \u0628\u0639\u062F \u064A\u0648\u0645 \u0635\u0639\u0628 \u064A\u0642\u062F\u0631 \u064A\u0634\u0641\u064A \u0634\u064A\u0621 \u0627\u0644\u0643\u0644\u0627\u0645 \u0645\u0627 \u064A\u0648\u0635\u0644\u0647. \u062A\u062D\u0633 \u0628\u0627\u0644\u062A\u0648\u0627\u0635\u0644 \u0627\u0644\u0623\u0639\u0645\u0642 \u0645\u0646 \u062E\u0644\u0627\u0644 \u0627\u0644\u0642\u0631\u0628 \u0627\u0644\u062C\u0633\u062F\u064A \u2014 \u0645\u0633\u0643 \u0627\u0644\u0623\u064A\u062F\u064A\u060C \u0644\u0645\u0633\u0629 \u0639\u0644\u0649 \u0627\u0644\u0638\u0647\u0631\u060C \u0627\u0644\u062C\u0644\u0648\u0633 \u0628\u0627\u0644\u0642\u0631\u0628. \u0647\u0630\u0627 \u0645\u0648 \u0628\u0633 \u062D\u0646\u0627\u0646 \u2014 \u0647\u0630\u0627 \u0623\u0645\u0627\u0646 \u0648\u0627\u0631\u062A\u0628\u0627\u0637 \u0639\u0645\u064A\u0642.",
+    examples: ["\u{1F91D} \u064A\u0645\u0633\u0643 \u064A\u062F\u0643 \u0642\u062F\u0627\u0645 \u0627\u0644\u0646\u0627\u0633", "\u{1FAC2} \u062D\u0636\u0646 \u0637\u0648\u064A\u0644 \u0639\u0646\u062F \u0627\u0644\u0644\u0642\u0627\u0621 \u0648\u0627\u0644\u0648\u062F\u0627\u0639", "\u{1F590}\uFE0F \u064A\u062F \u062D\u0646\u0648\u0646\u0629 \u0639\u0644\u0649 \u0643\u062A\u0641\u0643", "\u{1F6CB}\uFE0F \u064A\u062C\u0644\u0633 \u0642\u0631\u064A\u0628 \u0628\u0645\u0627 \u064A\u0643\u0641\u064A \u0644\u0644\u0645\u0633", "\u{1F48B} \u0644\u0645\u0633\u0629 \u0644\u0637\u064A\u0641\u0629 \u0648\u0647\u0648 \u064A\u0645\u0631 \u062C\u0646\u0628\u0643"],
+    howToLove: ["\u0627\u0645\u0633\u0643 \u064A\u062F\u0647 \u0644\u0645\u0627 \u062A\u0645\u0634\u0648\u0646 \u0633\u0648\u0627", "\u0627\u0633\u062A\u0642\u0628\u0644\u0647 \u0648\u0648\u062F\u0639\u0647 \u0628\u062D\u0636\u0646 \u0623\u0648 \u0628\u0648\u0633\u0629", "\u0642\u062F\u0645 \u0631\u0627\u062D\u0629 \u062C\u0633\u062F\u064A\u0629 \u0641\u064A \u0627\u0644\u0644\u062D\u0638\u0627\u062A \u0627\u0644\u0635\u0639\u0628\u0629", "\u0628\u0627\u062F\u0631 \u0628\u0627\u0644\u0644\u0645\u0633 \u0627\u0644\u062D\u0646\u0648\u0646 \u062E\u0644\u0627\u0644 \u0627\u0644\u064A\u0648\u0645", "\u0643\u0646 \u0645\u062A\u0639\u0645\u062F \u0641\u064A \u0627\u0644\u0644\u0645\u0633 \u0627\u0644\u064A\u0648\u0645\u064A \u2014 \u064A\u0641\u0631\u0642 \u0643\u062B\u064A\u0631"],
+    whatHurts: "\u0627\u0644\u0628\u0639\u062F \u0627\u0644\u062C\u0633\u062F\u064A \u0648\u0623\u0646\u062A\u0645 \u0633\u0648\u0627\u060C \u0641\u062A\u0631\u0627\u062A \u0637\u0648\u064A\u0644\u0629 \u0628\u062F\u0648\u0646 \u062D\u0646\u0627\u0646\u060C \u0623\u0648 \u0627\u0644\u0627\u0628\u062A\u0639\u0627\u062F \u0639\u0646 \u0644\u0645\u0633\u062A\u0647\u0645 \u2014 \u062A\u062D\u0633\u0647\u0627 \u0631\u0641\u0636 \u062D\u062A\u0649 \u0644\u0648 \u0645\u0627 \u0643\u0627\u0646 \u0627\u0644\u0642\u0635\u062F."
   },
 };
 
@@ -355,16 +371,32 @@ export default function LoveLanguagesTest() {
   const [currentQ, setCurrentQ] = useState(0);
   const [answers, setAnswers] = useState({});
   const [showResults, setShowResults] = useState(false);
+  const [showReveal, setShowReveal] = useState(false);
   const [hovered, setHovered] = useState(null);
   const [openCards, setOpenCards] = useState({});
   const [animateIn, setAnimateIn] = useState(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [partnerScores, setPartnerScores] = useState(null);
+  const [showCompareLink, setShowCompareLink] = useState(false);
+  const [linkCopied, setLinkCopied] = useState(false);
 
   const t = i18n[lang];
   const qs = questions[lang];
   const langD = lang === "ar" ? langDataAR : langDataEN;
   const isRTL = lang === "ar";
   const font = "'IBM Plex Sans Arabic', 'SF Pro Display', system-ui, sans-serif";
+
+  // Check URL for partner comparison data on mount
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const p = params.get("partner");
+    if (p) {
+      try {
+        const decoded = JSON.parse(atob(p));
+        if (decoded && typeof decoded === "object") setPartnerScores(decoded);
+      } catch { /* ignore invalid */ }
+    }
+  }, []);
 
   useEffect(() => {
     if (showResults) {
@@ -377,7 +409,14 @@ export default function LoveLanguagesTest() {
   const handleAnswer = (choice) => {
     setAnswers({ ...answers, [currentQ]: choice });
     if (currentQ < qs.length - 1) setTimeout(() => setCurrentQ(currentQ + 1), 300);
-    else setTimeout(() => setShowResults(true), 400);
+    else {
+      // Show reveal animation before results
+      setShowReveal(true);
+      setTimeout(() => {
+        setShowReveal(false);
+        setShowResults(true);
+      }, 2500);
+    }
   };
 
   const getScores = () => {
@@ -387,12 +426,53 @@ export default function LoveLanguagesTest() {
   };
 
   const restart = () => {
-    setCurrentQ(0); setAnswers({}); setShowResults(false);
-    setOpenCards({}); setAnimateIn(false); setShowConfetti(false); setStarted(true);
+    setCurrentQ(0); setAnswers({}); setShowResults(false); setShowReveal(false);
+    setOpenCards({}); setAnimateIn(false); setShowConfetti(false);
+    setShowCompareLink(false); setLinkCopied(false); setStarted(true);
   };
 
   const toggleCard = (l) => setOpenCards((p) => ({ ...p, [l]: !p[l] }));
   const resultsRef = useRef(null);
+
+  const getShareText = (scores) => {
+    const total = Object.values(scores).reduce((a, b) => a + b, 0);
+    const sorted = Object.entries(scores).sort((a, b) => b[1] - a[1]);
+    const primary = sorted[0][0];
+    const pct = Math.round((sorted[0][1] / total) * 100);
+    return lang === "ar"
+      ? `لغة حبي الأساسية: ${t.langLabels[primary]} ${langEmoji[primary]} (${pct}%)\nاكتشف لغة حبك:`
+      : `My primary love language: ${t.langLabels[primary]} ${langEmoji[primary]} (${pct}%)\nDiscover yours:`;
+  };
+
+  const handleShareWhatsApp = useCallback(() => {
+    const scores = getScores();
+    const text = getShareText(scores);
+    const url = window.location.origin + window.location.pathname;
+    window.open(`https://wa.me/?text=${encodeURIComponent(text + "\n" + url)}`, "_blank");
+  }, [answers, lang, t]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const handleShareNative = useCallback(async () => {
+    const scores = getScores();
+    const text = getShareText(scores);
+    const url = window.location.origin + window.location.pathname;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: t.title, text, url });
+      } catch { /* user cancelled */ }
+    }
+  }, [answers, lang, t]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const getCompareLink = () => {
+    const scores = getScores();
+    const encoded = btoa(JSON.stringify(scores));
+    return `${window.location.origin}${window.location.pathname}?partner=${encoded}`;
+  };
+
+  const handleCopyLink = () => {
+    navigator.clipboard.writeText(getCompareLink());
+    setLinkCopied(true);
+    setTimeout(() => setLinkCopied(false), 2000);
+  };
 
   const handleSavePDF = useCallback(() => {
     const scores = getScores();
@@ -717,6 +797,24 @@ export default function LoveLanguagesTest() {
     );
   }
 
+  // ═══════════════ REVEAL ANIMATION ═══════════════
+  if (showReveal) {
+    return (
+      <div style={{ ...pageStyle, display: "flex", alignItems: "center", justifyContent: "center", minHeight: "100vh" }}>
+        <style>{`@keyframes revPulse{0%,100%{transform:scale(1);opacity:0.7}50%{transform:scale(1.15);opacity:1}}@keyframes revSpin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes revFade{0%{opacity:0;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}`}</style>
+        <div style={{ textAlign: "center" }}>
+          <div style={{ fontSize: 64, marginBottom: 24, animation: "revPulse 1.5s ease-in-out infinite" }}>
+            {"\u2764\uFE0F"}
+          </div>
+          <div style={{ width: 48, height: 48, border: "3px solid #E5E5EA", borderTopColor: "#007AFF", borderRadius: "50%", animation: "revSpin 0.8s linear infinite", margin: "0 auto 24px" }} />
+          <p style={{ fontSize: 18, fontWeight: 700, color: "#1C1C1E", fontFamily: font, animation: "revFade 0.6s ease forwards" }}>
+            {t.discovering}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
   // ═══════════════ RESULTS ═══════════════
   if (showResults) {
     const scores = getScores();
@@ -775,8 +873,54 @@ export default function LoveLanguagesTest() {
               ))}
             </div>
           </div>
-          {/* Export */}
-          <div data-no-print style={{ display: "flex", gap: 10, marginBottom: 16, justifyContent: "center", flexWrap: "wrap" }}>
+          {/* Partner Comparison */}
+          {partnerScores && (
+            <div style={{ background: "white", borderRadius: 18, padding: "24px 20px", marginBottom: 20, border: "1px solid #E5E5EA" }}>
+              <h2 style={{ fontSize: 17, fontWeight: 800, color: "#1C1C1E", margin: "0 0 16px", textAlign: "center", fontFamily: font }}>
+                {"\u{1F46B}"} {t.comparePartner}
+              </h2>
+              <div style={{ display: "flex", gap: 12, flexWrap: "wrap" }}>
+                {sorted.map(([l]) => {
+                  const myPct = Math.round((scores[l] / total) * 100);
+                  const partnerTotal = Object.values(partnerScores).reduce((a, b) => a + b, 0);
+                  const partnerPct = Math.round(((partnerScores[l] || 0) / partnerTotal) * 100);
+                  return (
+                    <div key={l} style={{ flex: "1 1 0", minWidth: 90, background: "#F2F2F7", borderRadius: 14, padding: 12, textAlign: "center" }}>
+                      <div style={{ fontSize: 20, marginBottom: 4 }}>{langEmoji[l]}</div>
+                      <div style={{ fontSize: 10, color: "#8E8E93", fontWeight: 600, marginBottom: 6, fontFamily: font }}>{t.langLabels[l].split(" ")[0]}</div>
+                      <div style={{ display: "flex", justifyContent: "center", gap: 8 }}>
+                        <div>
+                          <div style={{ fontSize: 16, fontWeight: 800, color: langColors[l].primary }}>{myPct}%</div>
+                          <div style={{ fontSize: 9, color: "#AEAEB2" }}>{lang === "ar" ? "أنت" : "You"}</div>
+                        </div>
+                        <div style={{ width: 1, background: "#E5E5EA" }} />
+                        <div>
+                          <div style={{ fontSize: 16, fontWeight: 800, color: "#8E8E93" }}>{partnerPct}%</div>
+                          <div style={{ fontSize: 9, color: "#AEAEB2" }}>{lang === "ar" ? "شريكك" : "Partner"}</div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+          {/* Share & Export */}
+          <div data-no-print style={{ display: "flex", gap: 10, marginBottom: 12, justifyContent: "center", flexWrap: "wrap" }}>
+            <button onClick={handleShareWhatsApp} style={{
+              background: "#25D366", color: "white", border: "none",
+              padding: "12px 24px", borderRadius: 14, fontSize: 14, fontWeight: 600,
+              cursor: "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 8
+            }}>{"\u{1F4AC}"} {t.shareWhatsApp}</button>
+            {typeof navigator !== "undefined" && navigator.share && (
+              <button onClick={handleShareNative} style={{
+                background: "#007AFF", color: "white", border: "none",
+                padding: "12px 24px", borderRadius: 14, fontSize: 14, fontWeight: 600,
+                cursor: "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 8
+              }}>{"\u{1F517}"} {t.shareNative}</button>
+            )}
+          </div>
+          <div data-no-print style={{ display: "flex", gap: 10, marginBottom: 12, justifyContent: "center", flexWrap: "wrap" }}>
             <button onClick={handleShareImage} style={{
               background: "white", color: "#007AFF", border: "1px solid #007AFF",
               padding: "12px 24px", borderRadius: 14, fontSize: 14, fontWeight: 600,
@@ -788,11 +932,42 @@ export default function LoveLanguagesTest() {
               cursor: "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 8
             }}>{"\u{1F4C4}"} {t.saveAsPDF}</button>
           </div>
+          {/* Compare with Partner */}
+          <div data-no-print style={{ textAlign: "center", marginBottom: 16 }}>
+            <button onClick={() => setShowCompareLink(!showCompareLink)} style={{
+              background: "white", color: "#AF52DE", border: "1px solid #AF52DE",
+              padding: "12px 24px", borderRadius: 14, fontSize: 14, fontWeight: 600,
+              cursor: "pointer", fontFamily: font, display: "flex", alignItems: "center", gap: 8,
+              margin: "0 auto"
+            }}>{"\u{1F46B}"} {t.comparePartner}</button>
+            {showCompareLink && (
+              <div style={{ marginTop: 12, background: "white", borderRadius: 14, padding: 16, border: "1px solid #E5E5EA", textAlign: isRTL ? "right" : "left" }}>
+                <p style={{ fontSize: 13, color: "#8E8E93", margin: "0 0 8px", fontFamily: font }}>{t.compareInvite}</p>
+                <div style={{ display: "flex", gap: 8 }}>
+                  <input readOnly value={getCompareLink()} style={{
+                    flex: 1, padding: "10px 12px", borderRadius: 10, border: "1px solid #E5E5EA",
+                    fontSize: 12, color: "#3A3A3C", fontFamily: "monospace", direction: "ltr"
+                  }} />
+                  <button onClick={handleCopyLink} style={{
+                    background: linkCopied ? "#34C759" : "#007AFF", color: "white", border: "none",
+                    padding: "10px 16px", borderRadius: 10, fontSize: 13, fontWeight: 600,
+                    cursor: "pointer", fontFamily: font, whiteSpace: "nowrap"
+                  }}>{linkCopied ? t.copied : t.copyLink}</button>
+                </div>
+              </div>
+            )}
+          </div>
           {/* Retake */}
-          <div data-no-print style={{ textAlign: "center", paddingBottom: 32 }}>
+          <div data-no-print style={{ textAlign: "center", marginBottom: 16 }}>
             <button onClick={restart} style={{ background: "white", color: "#8E8E93", border: "1px solid #E5E5EA", padding: "14px 36px", borderRadius: 14, fontSize: 15, fontWeight: 600, cursor: "pointer", fontFamily: font }}>
               {"\u{1F504}"} {t.retake}
             </button>
+          </div>
+          {/* Source Attribution */}
+          <div style={{ textAlign: "center", paddingBottom: 32 }}>
+            <p style={{ fontSize: 11, color: "#AEAEB2", lineHeight: 1.6, margin: 0, fontFamily: font }}>
+              {t.methodology}
+            </p>
           </div>
         </div>
       </div>
@@ -819,8 +994,18 @@ export default function LoveLanguagesTest() {
             <span style={{ fontSize: 14, color: "#1C1C1E", fontWeight: 700, fontFamily: font }}>{t.questionOf(currentQ + 1, qs.length)}</span>
             <span style={{ fontSize: 12, color: "#007AFF", fontWeight: 600, background: "#EBF5FF", padding: "2px 10px", borderRadius: 99, fontFamily: font }}>{t.answered(answeredCount)}</span>
           </div>
-          <div style={{ height: 6, background: "#E5E5EA", borderRadius: 99, overflow: "hidden" }}>
-            <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #007AFF, #5AC8FA)", borderRadius: 99, transition: "width 0.4s cubic-bezier(0.34,1.56,0.64,1)" }} />
+          <div style={{ position: "relative" }}>
+            <div style={{ height: 6, background: "#E5E5EA", borderRadius: 99, overflow: "hidden" }}>
+              <div style={{ height: "100%", width: `${progress}%`, background: "linear-gradient(90deg, #007AFF, #5AC8FA)", borderRadius: 99, transition: "width 0.4s cubic-bezier(0.34,1.56,0.64,1)" }} />
+            </div>
+            {[10, 20].map((m) => (
+              <div key={m} style={{
+                position: "absolute", top: -2, [isRTL ? "right" : "left"]: `${(m / qs.length) * 100}%`,
+                width: 10, height: 10, borderRadius: "50%", transform: "translateX(-50%)",
+                background: answeredCount >= m ? "#007AFF" : "#D1D1D6",
+                border: "2px solid white", transition: "background 0.3s ease"
+              }} />
+            ))}
           </div>
         </div>
         {/* Card */}
